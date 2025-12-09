@@ -1,54 +1,79 @@
-// -------- ПАРАЛЛАКС-ЗВЁЗДЫ --------
-const canvas = document.getElementById("stars-canvas");
-const ctx = canvas.getContext("2d");
+// ===============================
+// ПАРАЛЛАКС ФОНА
+// ===============================
+(function () {
+    const layers = document.querySelectorAll(".parallax-layer");
 
-let stars = [];
-const STAR_COUNT = 120;
+    if (!layers.length) return;
 
-function resizeCanvas() {
-  canvas.width = window.innerWidth;
-  canvas.height = window.innerHeight;
-}
-resizeCanvas();
-window.addEventListener("resize", resizeCanvas);
+    const factors = {
+        "layer-stars": 0.08,
+        "layer-grid": 0.04,
+        "layer-glow": 0.02,
+    };
 
-function initStars() {
-  stars = [];
-  for (let i = 0; i < STAR_COUNT; i++) {
-    stars.push({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 1.2 + 0.4,
-      speed: Math.random() * 0.25 + 0.05,
-      alpha: Math.random() * 0.8 + 0.2
+    function onScroll() {
+        const y = window.scrollY || window.pageYOffset;
+
+        layers.forEach((layer) => {
+            let factor = 0.04;
+            for (const cls of layer.classList) {
+                if (factors[cls]) {
+                    factor = factors[cls];
+                    break;
+                }
+            }
+            const translateY = y * factor * -1;
+            layer.style.transform = `translate3d(0, ${translateY}px, 0)`;
+        });
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+})();
+
+// ===============================
+// ПАРАЛЛАКС КАРТОЧКИ HERO (легкий tilt)
+// ===============================
+(function () {
+    const card = document.querySelector(".hero-card");
+    if (!card) return;
+
+    function handleMove(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left - rect.width / 2;
+        const y = e.clientY - rect.top - rect.height / 2;
+        const rotateX = (y / rect.height) * -6;
+        const rotateY = (x / rect.width) * 6;
+
+        card.style.transform = `translateY(-4px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    }
+
+    function reset() {
+        card.style.transform = "translateY(0) rotateX(0deg) rotateY(0deg)";
+    }
+
+    card.addEventListener("mousemove", handleMove);
+    card.addEventListener("mouseleave", reset);
+})();
+
+// ===============================
+// Мобильное меню
+// ===============================
+(function () {
+    const burger = document.getElementById("burger");
+    const nav = document.getElementById("mainNav");
+    if (!burger || !nav) return;
+
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        nav.classList.toggle("open");
     });
-  }
-}
-initStars();
 
-let lastScrollY = window.scrollY;
-
-function animate() {
-  const scrollY = window.scrollY;
-  const scrollDelta = scrollY - lastScrollY;
-  lastScrollY = scrollY;
-
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  for (const star of stars) {
-    star.y += scrollDelta * star.speed * 0.2;
-
-    if (star.y < -10) star.y = canvas.height + 10;
-    if (star.y > canvas.height + 10) star.y = -10;
-
-    ctx.globalAlpha = star.alpha;
-    ctx.fillStyle = "#ffffff";
-    ctx.beginPath();
-    ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  ctx.globalAlpha = 1;
-  requestAnimationFrame(animate);
-}
-animate();
+    nav.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+            burger.classList.remove("active");
+            nav.classList.remove("open");
+        }
+    });
+})();
