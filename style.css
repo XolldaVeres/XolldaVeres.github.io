@@ -1,46 +1,110 @@
+/* ===== ОСНОВА ===== */
 body {
     margin: 0;
-    padding: 40px;
-    background: #0d0f12;
-    color: #fff;
     font-family: Arial, sans-serif;
+    background: #0d1117;
+    color: #e6e6e6;
+}
+
+/* ===== HERO ===== */
+.hero {
     text-align: center;
+    padding: 80px 20px;
 }
 
-h1 {
+.hero-logo {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
     font-size: 42px;
-    margin-bottom: 0;
+    margin-bottom: 10px;
 }
 
-h2 {
-    font-weight: 300;
-    margin-top: 5px;
-    opacity: .85;
-}
-
-p {
+.subtitle {
     font-size: 18px;
-    opacity: .8;
+    opacity: 0.8;
+    margin-bottom: 30px;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-li {
-    margin: 8px 0;
-    font-size: 18px;
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .btn {
-    display: inline-block;
-    margin-top: 25px;
-    padding: 12px 25px;
-    background: #3b82f6;
+    padding: 14px 24px;
     border-radius: 8px;
-    color: white;
     text-decoration: none;
-    font-size: 17px;
+    font-weight: bold;
+}
+
+.btn.primary {
+    background: #2d8cff;
+    color: white;
+}
+
+.btn.secondary {
+    border: 2px solid #2d8cff;
+    color: #2d8cff;
+}
+
+.btn.large {
+    font-size: 20px;
+}
+
+/* ===== BLOCKS ===== */
+.block {
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.block.dark {
+    background: #161b22;
+}
+
+.block h2 {
+    font-size: 34px;
+    margin-bottom: 40px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1c222b;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.price-tag {
+    font-size: 24px;
+    margin: 10px 0;
+    color: #2d8cff;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.6;
+    font-size: 14px;
+    background: #0d1117;
+    margin-top: 40px;
 }
