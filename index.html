@@ -1,121 +1,412 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotMaker — Telegram-автоматизация</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>BotMaker — Telegram-боты под ключ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Создаю Telegram-ботов для бизнеса, заявок и ИИ-ассистентов. Интеграции с Google-таблицами, CRM и напоминаниями." />
+    <link rel="stylesheet" href="style.css" />
 
-    <!-- Ускорение загрузки картинок -->
-    <link rel="preload" href="images/massage.jpg" as="image">
-    <link rel="preload" href="images/hair.jpg" as="image">
-    <link rel="preload" href="images/sofa.jpg" as="image">
-    <link rel="preload" href="images/detailing.jpg" as="image">
-    <link rel="preload" href="images/screen-massage.jpg" as="image">
-    <link rel="preload" href="images/screen-tarot.jpg" as="image">
+    <!-- Прелоад основных картинок (ускоряет первый экран и карточки) -->
+    <link rel="preload" href="images/massage.jpg" as="image" />
+    <link rel="preload" href="images/hair.jpg" as="image" />
+    <link rel="preload" href="images/sofa.jpg" as="image" />
+    <link rel="preload" href="images/detailing.jpg" as="image" />
+    <link rel="preload" href="images/clientflow.jpg" as="image" />
+    <link rel="preload" href="images/photo1.jpg" as="image" />
 </head>
-
 <body>
-
-<!-- ❄ Снежный эффект -->
-<div class="snow-container"></div>
-
-<header class="hero parallax">
-    <div class="hero-content">
-        <h1>Создаю ботов для заявок, продаж и ИИ-сопровождения клиентов</h1>
-        <p>Заявки 24/7 • Google-таблицы • Mini-CRM • ИИ-ассистенты с памятью</p>
-
-        <div class="hero-buttons">
-            <a href="#portfolio" class="btn">Открыть портфолио-бота</a>
-            <a href="#contact" class="btn secondary">Оставить заявку</a>
-        </div>
+    <!-- Фон со звёздами и параллаксом -->
+    <div class="parallax-bg">
+        <div class="parallax-layer layer-1" data-speed="0.05"></div>
+        <div class="parallax-layer layer-2" data-speed="0.12"></div>
+        <div class="parallax-layer layer-stars" data-speed="0.02"></div>
     </div>
-</header>
 
+    <!-- Снег поверх всего контента -->
+    <div class="snow-container"></div>
 
-<!-- ===== ПОРТФОЛИО ===== -->
-<section id="portfolio" class="section">
-    <h2 class="section-title">Примеры моих ботов</h2>
-
-    <div class="cards-grid">
-
-        <!-- МАССАЖ -->
-        <div class="card">
-            <img src="images/massage.jpg" loading="lazy" class="card-img">
-            <h3>@myMassageSoulBot</h3>
-            <p>Онлайн-запись на массаж, расписание и авто-напоминания.</p>
+    <!-- Шапка -->
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#top" class="logo">
+                <div class="logo-icon">🤖</div>
+                <div class="logo-text">
+                    <span class="logo-title">BOTMAKER</span>
+                    <span class="logo-sub">Telegram-автоматизация</span>
+                </div>
+            </a>
+            <nav class="nav">
+                <a href="#portfolio">Портфолио</a>
+                <a href="#prices">Тарифы</a>
+                <a href="#screens">Скрины</a>
+                <a href="#process">Как я работаю</a>
+                <a href="#contact">Контакты</a>
+            </nav>
         </div>
+    </header>
 
-        <!-- ВОЛОСЫ -->
-        <div class="card">
-            <img src="images/hair.jpg" loading="lazy" class="card-img">
-            <h3>@DariaHairProBot</h3>
-            <p>Ассистент по красоте: запись, услуги, ответы на вопросы.</p>
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <div class="container hero-inner">
+                <div class="hero-text">
+                    <p class="hero-kicker">Telegram-боты для малого бизнеса</p>
+                    <h1>Создаю ботов для заявок, продаж<br />и ИИ-сопровождения клиентов</h1>
+                    <p class="hero-sub">
+                        Заявки 24/7 • Запись клиентов • Google-таблицы • Mini-CRM •
+                        ИИ-ассистенты с памятью.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn btn-primary" href="https://t.me/SmartCloser15Bot" target="_blank" rel="noopener">
+                            Открыть портфолио-бота
+                        </a>
+                        <a class="btn btn-outline" href="#contact">
+                            Оставить заявку
+                        </a>
+                    </div>
+                    <p class="hero-mini">
+                        Под ключ: от идеи до запуска за несколько дней. Без абонплаты, оплата за результат.
+                    </p>
+                </div>
+                <div class="hero-card" data-speed="0.18">
+                    <div class="hero-logo-circle">
+                        <!-- Можно заменить на любой свой лого / скрин -->
+                        <img src="images/photo1.jpg" alt="BotMaker" loading="lazy" />
+                    </div>
+                    <div class="hero-card-text">
+                        <h3>Премиальный Telegram-бот</h3>
+                        <p>
+                            Умная воронка, напоминания, Google-таблица,
+                            статусы заявок и ИИ-диалог для прогрева.
+                        </p>
+                        <ul>
+                            <li>⚙️ Под нишу и задачи клиента</li>
+                            <li>📊 Таблица как мини-CRM</li>
+                            <li>🤖 GPT-ассистент с памятью</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ПОРТФОЛИО -->
+        <section class="section" id="portfolio">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Примеры моих ботов</h2>
+                    <p>Живые проекты: запись клиентов, заявки, ИИ-диалог и мини-CRM.</p>
+                </div>
+
+                <!-- Линия 1: запись и услуги -->
+                <h3 class="portfolio-group-title">Боты для записи и услуг</h3>
+                <div class="cards-grid">
+                    <article class="bot-card">
+                        <div class="bot-tag">Массаж • Запись + прайс</div>
+                        <div class="bot-img">
+                            <img src="images/massage.jpg" alt="Бот для массажиста" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@myMassageSoulBot</h4>
+                            <p>Онлайн-запись на массаж, расписание и напоминания клиентам.</p>
+                            <ul>
+                                <li>Кнопка «Записаться» в один клик</li>
+                                <li>Слоты по времени + напоминания</li>
+                                <li>Прайс в боте вместо длинных переписок</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="bot-card">
+                        <div class="bot-tag">Бьюти • Онлайн-ассистент</div>
+                        <div class="bot-img">
+                            <img src="images/hair.jpg" alt="Ассистент для бьюти-мастера" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@DariaHairProBot</h4>
+                            <p>Ассистент по красоте: запись, услуги, ответы на частые вопросы.</p>
+                            <ul>
+                                <li>Раздел «Записаться» с выбором процедур</li>
+                                <li>Меню с услугами и ценами</li>
+                                <li>Напоминания о визите и прогрев клиента</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="bot-card">
+                        <div class="bot-tag">Мебель • Дорогие заказы</div>
+                        <div class="bot-img">
+                            <img src="images/sofa.jpg" alt="Бот для студии диванов" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@SofaMasterBot</h4>
+                            <p>Заявки на диваны на заказ: дизайн, размеры и бюджет.</p>
+                            <ul>
+                                <li>Анкета с ключевыми параметрами</li>
+                                <li>Расписание встреч без пересечений</li>
+                                <li>Память по клиенту в Google-таблице</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Линия 2: заявки + Google Sheets -->
+                <h3 class="portfolio-group-title">Боты для заявок и Google-таблиц</h3>
+                <div class="cards-grid">
+                    <article class="bot-card">
+                        <div class="bot-tag">Mini-CRM • Авто</div>
+                        <div class="bot-img">
+                            <img src="images/detailing.jpg" alt="Бот для детейлинга" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@DetailingShowroomBot</h4>
+                            <p>Заявки на детейлинг с проверкой пересечений в расписании.</p>
+                            <ul>
+                                <li>Форма: услуга, авто, бюджет, контакт</li>
+                                <li>Слоты в расписании + альтернатива при занятости</li>
+                                <li>Напоминание клиенту за 30 минут до записи</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="bot-card">
+                        <div class="bot-tag">Заявки • Google Sheets</div>
+                        <div class="bot-img">
+                            <img src="images/clientflow.jpg" alt="myClientFlowBot" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@myClientFlowBot</h4>
+                            <p>Все обращения попадают в таблицу: клиенты, статусы и комментарии.</p>
+                            <ul>
+                                <li>Таблица как CRM: лиды, статусы, комментарии</li>
+                                <li>Уведомления в Telegram при новой заявке</li>
+                                <li>Основа для масштабирования отдела продаж</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="bot-card">
+                        <div class="bot-tag">Mini-CRM • Базовая</div>
+                        <div class="bot-img">
+                            <!-- сюда можно поставить CoffeeCRM / любую иконку -->
+                            <img src="images/crm.jpg" alt="SimpleCRMbot" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>SimpleCRMbot</h4>
+                            <p>Простой бот для заявок и клиентов через Google-таблицу.</p>
+                            <ul>
+                                <li>Заявка → сразу в таблицу</li>
+                                <li>Статусы: новый, в работе, закрыт</li>
+                                <li>История общения по каждому клиенту</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Линия 3: ИИ-боты -->
+                <h3 class="portfolio-group-title">ИИ-боты и ассистенты</h3>
+                <div class="cards-grid">
+                    <article class="bot-card">
+                        <div class="bot-tag">ИИ-ассистент • Таро</div>
+                        <div class="bot-img">
+                            <img src="images/screen-tarot.jpg" alt="SoulTarotBot" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@mySoulTarotBot</h4>
+                            <p>Таро-ассистент с ИИ и памятью. Ведёт клиента между консультациями.</p>
+                            <ul>
+                                <li>Память переписки и контекста</li>
+                                <li>Онлайн-запись на расклад</li>
+                                <li>Диалог-поддержка в стиле автора</li>
+                            </ul>
+                        </div>
+                    </article>
+
+                    <article class="bot-card">
+                        <div class="bot-tag">Портфолио-бот • ИИ-диалог</div>
+                        <div class="bot-img">
+                            <img src="images/screen-smartcloser.jpg" alt="SmartCloser15Bot" loading="lazy" />
+                        </div>
+                        <div class="bot-body">
+                            <h4>@SmartCloser15Bot</h4>
+                            <p>Мой портфолио-бот: примеры работ, тарифы, заявки и демо ИИ-бота.</p>
+                            <ul>
+                                <li>Кнопки: «Примеры работ», «Тарифы», «Оставить заявку»</li>
+                                <li>Встроенный GPT-ассистент отвечает за меня</li>
+                                <li>Подходит как шаблон для экспертов и агентств</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- СКРИНЫ -->
+        <section class="section section-alt" id="screens">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Скрины из ботов</h2>
+                    <p>Так выглядят живые диалоги и заявки в Telegram.</p>
+                </div>
+
+                <div class="screens-grid">
+                    <figure class="screen-item">
+                        <img src="images/screen-massage.jpg" alt="Скрин бота для массажиста" loading="lazy" />
+                        <figcaption>Запись на массаж: кнопки, услуги и авто-напоминания.</figcaption>
+                    </figure>
+
+                    <figure class="screen-item">
+                        <img src="images/screen-tarot.jpg" alt="Скрин ИИ-бота Таро" loading="lazy" />
+                        <figcaption>ИИ-ассистент Таро с кнопками услуг и обучения.</figcaption>
+                    </figure>
+
+                    <figure class="screen-item">
+                        <img src="images/screen-smartcloser.jpg" alt="Скрин портфолио-бота" loading="lazy" />
+                        <figcaption>Портфолио-бот с примерами работ и тарифами.</figcaption>
+                    </figure>
+
+                    <figure class="screen-item">
+                        <img src="images/screen-kindergarten.jpg" alt="Скрин детского сада" loading="lazy" />
+                        <figcaption>Ассистент для детского сада: тёплый текст + меню.</figcaption>
+                    </figure>
+                </div>
+
+                <p class="screens-note">
+                    👉 Хочешь больше примеров? Проще всего — открыть
+                    <a href="https://t.me/SmartCloser15Bot" target="_blank" rel="noopener">портфолио-бота в Telegram</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ТАРИФЫ -->
+        <section class="section" id="prices">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Тарифы</h2>
+                    <p>Можно начать с простого бота-визитки и дорасти до ИИ-ассистента и мини-CRM.</p>
+                </div>
+
+                <div class="cards-grid prices-grid">
+                    <article class="price-card">
+                        <div class="price-tag">Старт</div>
+                        <h3>Простой бот</h3>
+                        <p class="price-value">от 1&nbsp;500&nbsp;₽</p>
+                        <ul>
+                            <li>Меню и кнопки</li>
+                            <li>Базовая структура</li>
+                            <li>Инфо-бот или визитка</li>
+                        </ul>
+                        <p class="price-note">
+                            Подходит, чтобы просто «заявить о себе» в Telegram.
+                        </p>
+                    </article>
+
+                    <article class="price-card">
+                        <div class="price-tag">Заявки</div>
+                        <h3>Бот для заявок</h3>
+                        <p class="price-value">от 4&nbsp;000&nbsp;₽</p>
+                        <ul>
+                            <li>Форма заявки в боте</li>
+                            <li>Сохранение в Google-таблицу</li>
+                            <li>Уведомления администратору</li>
+                        </ul>
+                        <p class="price-note">
+                            Чтобы не терять ни одного лида и собирать базу клиентов.
+                        </p>
+                    </article>
+
+                    <article class="price-card">
+                        <div class="price-tag">Бизнес</div>
+                        <h3>Продвинутый бот</h3>
+                        <p class="price-value">от 8&nbsp;000&nbsp;₽</p>
+                        <ul>
+                            <li>Статусы заявок</li>
+                            <li>Напоминания и логика</li>
+                            <li>Mini-CRM в таблице</li>
+                        </ul>
+                        <p class="price-note">
+                            Для тех, кто реально работает с потоком заявок каждый день.
+                        </p>
+                    </article>
+
+                    <article class="price-card">
+                        <div class="price-tag">ИИ</div>
+                        <h3>ИИ-бот / ассистент</h3>
+                        <p class="price-value">от 10&nbsp;000&nbsp;₽</p>
+                        <ul>
+                            <li>GPT-ассистент под нишу</li>
+                            <li>Память и персональные сценарии</li>
+                            <li>Ответы на частые вопросы 24/7</li>
+                        </ul>
+                        <p class="price-note">
+                            Чтобы бот не просто отвечал, а думал и вёл диалог в стиле бренда.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- КАК Я РАБОТАЮ -->
+        <section class="section section-alt" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Как мы запускаем бота</h2>
+                    <p>Простой рабочий процесс: без лишней теории и бесконечных созвонов.</p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <span class="step-number">1</span>
+                        <h3>Созвон или переписка</h3>
+                        <p>Кратко разбираем нишу, задачи и примеры. Можно просто накидать голосовые.</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">2</span>
+                        <h3>Схема бота</h3>
+                        <p>Собираю структуру, сценарии, Google-таблицу и логику статусов.</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">3</span>
+                        <h3>Разработка и тест</h3>
+                        <p>Подключаю бота, формы, интеграции. Вместе щёлкаем по кнопкам и ловим баги.</p>
+                    </div>
+                    <div class="step-item">
+                        <span class="step-number">4</span>
+                        <h3>Запуск и доработка</h3>
+                        <p>Бот принимает первые заявки. По факту работы докручиваем сценарии и ИИ-ответы.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- КОНТАКТ -->
+        <section class="section" id="contact">
+            <div class="container contact-inner">
+                <div class="contact-text">
+                    <h2>Оставить заявку</h2>
+                    <p>
+                        Напишите мне в Telegram — кратко расскажите нишу и задачу.
+                        Обычно отвечаю в течение дня.
+                    </p>
+                    <p class="contact-mini">
+                        Можно сразу прикрепить ссылку на аккаунт / сайт или описать текущий процесс
+                        работы с клиентами — подберу формат бота под ваш бизнес.
+                    </p>
+                    <a class="btn btn-primary" href="https://t.me/SmartCloser15Bot" target="_blank" rel="noopener">
+                        Написать в Telegram
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <span>© 2025 BotMaker. Telegram-автоматизация под ключ.</span>
+            <span class="footer-small">Сделано руками, без конструкторов :)</span>
         </div>
+    </footer>
 
-        <!-- МЕБЕЛЬ -->
-        <div class="card">
-            <img src="images/sofa.jpg" loading="lazy" class="card-img">
-            <h3>@SofaMasterBot</h3>
-            <p>Заявки на диваны на заказ, дизайн и параметры клиента.</p>
-        </div>
-
-        <!-- ДЕТЕЙЛИНГ -->
-        <div class="card">
-            <img src="images/detailing.jpg" loading="lazy" class="card-img">
-            <h3>@DetailingShowroomBot</h3>
-            <p>Заявки на детейлинг + проверка пересечений в расписании.</p>
-        </div>
-
-        <!-- МИНИ-CRM -->
-        <div class="card">
-            <img src="images/clientflow.jpg" loading="lazy" class="card-img">
-            <h3>@myClientFlowBot</h3>
-            <p>Мини-CRM: статусы, таблица, уведомления о новых заявках.</p>
-        </div>
-
-        <!-- ТАРО ИИ -->
-        <div class="card">
-            <img src="images/screen-tarot.jpg" loading="lazy" class="card-img">
-            <h3>@mySoulTarotBot</h3>
-            <p>ИИ-ассистент с памятью, диалоги в стиле автора.</p>
-        </div>
-
-        <!-- ПОРТФОЛИО-БОТ -->
-        <div class="card">
-            <img src="images/screen-smartcloser.jpg" loading="lazy" class="card-img">
-            <h3>@SmartCloser15Bot</h3>
-            <p>Портфолио-бот с тарифами, заявками и GPT-ассистентом.</p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ===== СКРИНЫ ===== -->
-<section id="screens" class="section dark">
-    <h2 class="section-title">Скрины из ботов</h2>
-
-    <div class="screens-grid">
-        <img src="images/screen-massage.jpg" loading="lazy" class="screen">
-        <img src="images/screen-tarot.jpg" loading="lazy" class="screen">
-        <img src="images/screen-smartcloser.jpg" loading="lazy" class="screen">
-        <img src="images/screen-kindergarten.jpg" loading="lazy" class="screen">
-    </div>
-</section>
-
-
-<!-- ===== КОНТАКТ ===== -->
-<section id="contact" class="section">
-    <h2 class="section-title">Оставить заявку</h2>
-
-    <div class="contact-box">
-        <p>Напишите мне в Telegram — подберу формат бота под ваш бизнес.</p>
-
-        <a href="https://t.me/SmartCloser15" class="btn">Написать в Telegram</a>
-    </div>
-</section>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
