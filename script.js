@@ -1,34 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Плавный скролл по якорям
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener("click", (e) => {
-            const targetId = link.getAttribute("href").slice(1);
-            if (!targetId) return;
-            const targetElem = document.getElementById(targetId);
-            if (!targetElem) return;
+/* ---------- SNOW EFFECT ---------- */
+function createSnowflake() {
+    const flake = document.createElement("div");
+    flake.classList.add("snowflake");
 
-            e.preventDefault();
-            const top = targetElem.getBoundingClientRect().top + window.scrollY - 72;
-            window.scrollTo({
-                top,
-                behavior: "smooth"
-            });
-        });
-    });
+    flake.style.left = Math.random() * 100 + "vw";
+    flake.style.animationDuration = 3 + Math.random() * 4 + "s";
+    flake.style.opacity = 0.4 + Math.random() * 0.6;
 
-    // Параллакс фоновых слоёв
-    const parallaxElems = document.querySelectorAll("[data-speed]");
-    if (parallaxElems.length) {
-        const handleParallax = () => {
-            const scrollY = window.scrollY || window.pageYOffset;
-            parallaxElems.forEach(elem => {
-                const speed = parseFloat(elem.dataset.speed || "0");
-                const translateY = scrollY * speed * -1;
-                elem.style.transform = `translate3d(0, ${translateY}px, 0)`;
-            });
-        };
+    document.querySelector(".snow-container").appendChild(flake);
 
-        handleParallax();
-        window.addEventListener("scroll", handleParallax, { passive: true });
-    }
-});
+    setTimeout(() => flake.remove(), 8000);
+}
+
+setInterval(createSnowflake, 120);
