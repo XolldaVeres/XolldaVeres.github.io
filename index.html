@@ -1,122 +1,294 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <title>BotMaker — Telegram-боты под ключ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Создаю Telegram-ботов для бизнеса, заявок и ИИ-ассистентов." />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <title>BotMaker — Telegram-боты под ключ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Telegram-боты под ключ: заявки, запись, Google-таблицы, mini-CRM, ИИ-ассистенты." />
 
-    <!-- preload -->
-    <link rel="preload" href="images/parallax-bg.jpg" as="image" />
-    <link rel="preload" href="images/parallax-mid.png" as="image" />
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- preload hero images -->
+  <link rel="preload" href="images/parallax-bg.jpg" as="image">
+  <link rel="preload" href="images/parallax-mid.png" as="image">
 </head>
 
 <body>
 
-<!-- PARALLAX HERO ONLY -->
-<section class="hero-parallax">
-    <div class="parallax-layer bg" data-speed="0.08"></div>
-    <div class="parallax-layer mid" data-speed="0.18"></div>
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-        <span class="hero-badge">Telegram-боты под ключ</span>
-
-        <h1>
-            Бот принимает заявки<br>
-            и записи за вас — <span>24/7</span>
-        </h1>
-
-        <p>
-            Клиенты сами выбирают услугу и время.<br>
-            Вы получаете готовые заявки без переписок.
-        </p>
-
-        <div class="hero-actions">
-            <a href="#portfolio" class="btn btn-primary">Смотреть примеры</a>
-            <a href="#contact" class="btn btn-outline">Обсудить задачу</a>
-        </div>
-
-        <div class="hero-hint">
-            ⌄ листай вниз
-        </div>
-    </div>
-</section>
-
-<!-- СНЕГ -->
-<div class="snow-container"></div>
-
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
 <header class="header">
-    <div class="container header-inner">
-        <a href="#top" class="logo">
-            <span class="logo-icon">🤖</span>
-            <span class="logo-text">
-                <b>BOTMAKER</b>
-                <small>Telegram-автоматизация</small>
-            </span>
-        </a>
+  <div class="container header-inner">
+    <a href="#top" class="logo">
+      <div class="logo-icon">🤖</div>
+      <div class="logo-text">
+        <strong>BOTMAKER</strong>
+        <small>Telegram-автоматизация</small>
+      </div>
+    </a>
 
-        <nav class="nav">
-            <a href="#portfolio">Портфолио</a>
-            <a href="#prices">Тарифы</a>
-            <a href="#contact">Контакты</a>
-        </nav>
+    <nav class="nav">
+      <a href="#portfolio">Работы</a>
+      <a href="#screens">Скрины</a>
+      <a href="#prices">Тарифы</a>
+      <a href="#process">Процесс</a>
+      <a href="#contact">Контакты</a>
+    </nav>
 
-        <a href="https://t.me/SmartCloser15Bot" class="btn btn-primary small">
-            Написать
-        </a>
-    </div>
+    <a href="https://t.me/SmartCloser15Bot" target="_blank" class="btn btn-primary small">
+      Написать
+    </a>
+  </div>
 </header>
 
-<main id="top">
+<!-- ================= HERO PARALLAX ================= -->
+<section class="hero-parallax" id="top">
 
-<!-- ↓↓↓ ДАЛЬШЕ ТВОЙ КОД БЕЗ ЛОГИЧЕСКИХ ИЗМЕНЕНИЙ ↓↓↓ -->
+  <div class="parallax-layer bg" data-speed="0.15"></div>
+  <div class="parallax-layer mid" data-speed="0.30"></div>
+  <!-- если захочешь -->
+  <!-- <div class="parallax-layer front" data-speed="0.45"></div> -->
 
-<!-- ПОРТФОЛИО -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <span class="hero-badge">Telegram-боты под ключ</span>
+
+    <h1>
+      Бот принимает заявки<br>
+      и записи за вас — <span>24/7</span>
+    </h1>
+
+    <p>
+      Клиенты сами выбирают услугу и время.  
+      Вы получаете готовые заявки без переписок:
+      Google-таблица как mini-CRM, напоминания и ИИ-ответы.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#portfolio" class="btn btn-primary">
+        Смотреть примеры
+      </a>
+      <a href="#contact" class="btn btn-outline">
+        Обсудить задачу
+      </a>
+    </div>
+
+    <div class="hero-hint">Листай вниз</div>
+  </div>
+
+</section>
+
+<!-- ================= SNOW ================= -->
+<div class="snow-container"></div>
+
+<main>
+
+<!-- ================= PORTFOLIO ================= -->
 <section class="section" id="portfolio">
-    <div class="container">
-        <div class="section-header">
-            <h2>Примеры моих ботов</h2>
-            <p>Живые проекты: запись, заявки, ИИ и mini-CRM.</p>
-        </div>
+  <div class="container">
 
-        <!-- (остальной твой portfolio HTML остаётся БЕЗ ИЗМЕНЕНИЙ) -->
+    <div class="section-header">
+      <h2>Работы и спектр ботов</h2>
+      <p>Это не «один бот». Я собираю системы под конкретные задачи.</p>
     </div>
+
+    <h3 class="portfolio-group-title">Запись и услуги</h3>
+    <div class="cards-grid">
+
+      <article class="bot-card">
+        <span class="bot-tag">Массаж · Запись</span>
+        <div class="bot-img">
+          <img src="images/massage.jpg" alt="Массаж бот">
+        </div>
+        <div class="bot-body">
+          <h4>@myMassageSoulBot</h4>
+          <p>Онлайн-запись, расписание, авто-напоминания.</p>
+          <ul>
+            <li>Слоты без пересечений</li>
+            <li>Прайс в кнопках</li>
+            <li>Напоминания клиентам</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bot-card">
+        <span class="bot-tag">Бьюти · Ассистент</span>
+        <div class="bot-img">
+          <img src="images/hair.jpg" alt="Бьюти бот">
+        </div>
+        <div class="bot-body">
+          <h4>@DariaHairProBot</h4>
+          <p>Услуги, консультации, ответы на вопросы.</p>
+          <ul>
+            <li>Меню услуг</li>
+            <li>Запись в боте</li>
+            <li>Напоминания</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="bot-card">
+        <span class="bot-tag">Мебель · Заявки</span>
+        <div class="bot-img">
+          <img src="images/sofa.jpg" alt="Мебель бот">
+        </div>
+        <div class="bot-body">
+          <h4>@SofaMasterBot</h4>
+          <p>Дорогие заказы, анкета, контроль статусов.</p>
+          <ul>
+            <li>Форма заявки</li>
+            <li>Google-таблица</li>
+            <li>Статусы</li>
+          </ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
 </section>
 
-<!-- ТАРИФЫ -->
+<!-- ================= SCREENS ================= -->
+<section class="section" id="screens">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Скрины из ботов</h2>
+      <p>Реальные диалоги и интерфейсы Telegram.</p>
+    </div>
+
+    <div class="screens-grid">
+      <figure class="screen-item">
+        <img src="images/screen-massage.jpg" alt="">
+        <figcaption>Запись и кнопки</figcaption>
+      </figure>
+
+      <figure class="screen-item">
+        <img src="images/screen-tarot.jpg" alt="">
+        <figcaption>ИИ-ассистент</figcaption>
+      </figure>
+
+      <figure class="screen-item">
+        <img src="images/screen-smartcloser.jpg" alt="">
+        <figcaption>Портфолио-бот</figcaption>
+      </figure>
+
+      <figure class="screen-item">
+        <img src="images/screen-kindergarten.jpg" alt="">
+        <figcaption>Тёплый текст + меню</figcaption>
+      </figure>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= PRICES ================= -->
 <section class="section" id="prices">
-    <div class="container">
-        <div class="section-header">
-            <h2>Тарифы</h2>
-        </div>
-        <!-- твой код тарифов -->
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Тарифы</h2>
+      <p>От простого бота до полноценной системы.</p>
     </div>
+
+    <div class="cards-grid prices-grid">
+
+      <article class="price-card">
+        <span class="price-tag">Старт</span>
+        <h3>Простой бот</h3>
+        <div class="price-value">от 1 500 ₽</div>
+        <ul>
+          <li>Меню и кнопки</li>
+          <li>Инфо-бот</li>
+          <li>Быстрый запуск</li>
+        </ul>
+      </article>
+
+      <article class="price-card">
+        <span class="price-tag">Заявки</span>
+        <h3>Бот для заявок</h3>
+        <div class="price-value">от 4 000 ₽</div>
+        <ul>
+          <li>Форма заявки</li>
+          <li>Google-таблица</li>
+          <li>Уведомления</li>
+        </ul>
+      </article>
+
+      <article class="price-card">
+        <span class="price-tag">Бизнес</span>
+        <h3>Продвинутый бот</h3>
+        <div class="price-value">от 8 000 ₽</div>
+        <ul>
+          <li>Статусы</li>
+          <li>Напоминания</li>
+          <li>Mini-CRM</li>
+        </ul>
+      </article>
+
+    </div>
+  </div>
 </section>
 
-<!-- КОНТАКТ -->
-<section class="section" id="contact">
-    <div class="container contact-inner">
-        <div class="contact-text">
-            <h2>Оставить заявку</h2>
-            <p>Напишите в Telegram — отвечаю лично.</p>
-            <a class="btn btn-primary" href="https://t.me/SmartCloser15Bot">
-                Написать в Telegram
-            </a>
-        </div>
+<!-- ================= PROCESS ================= -->
+<section class="section" id="process">
+  <div class="container">
+
+    <div class="section-header">
+      <h2>Как мы запускаем бота</h2>
     </div>
+
+    <div class="steps-grid">
+      <div class="step-item">
+        <span class="step-number">1</span>
+        <h3>Задача</h3>
+        <p>Разбираем нишу и процесс.</p>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">2</span>
+        <h3>Схема</h3>
+        <p>Логика, сценарии, таблицы.</p>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">3</span>
+        <h3>Разработка</h3>
+        <p>Подключение и тест.</p>
+      </div>
+
+      <div class="step-item">
+        <span class="step-number">4</span>
+        <h3>Запуск</h3>
+        <p>Первые заявки и доработка.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container contact-inner">
+    <div class="contact-text">
+      <h2>Обсудить проект</h2>
+      <p>
+        Напишите в Telegram — кратко опишите задачу.
+        Я подскажу, какой бот подойдёт лучше всего.
+      </p>
+      <a href="https://t.me/SmartCloser15Bot" target="_blank" class="btn btn-primary">
+        Написать в Telegram
+      </a>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer class="footer">
-    <div class="container footer-inner">
-        <span>© 2025 BotMaker</span>
-        <span>Сделано руками</span>
-    </div>
+  <div class="container footer-inner">
+    <span>© 2025 BotMaker</span>
+    <span>Сделано руками, без конструкторов</span>
+  </div>
 </footer>
 
 <script src="script.js"></script>
