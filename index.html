@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <title>BotMaker — Telegram-боты под ключ</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Telegram-боты под ключ: заявки, запись клиентов, Google-таблицы, мини-CRM и ИИ-ассистенты." />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="style.css" />
-
-    <link rel="preload" href="images/massage.jpg" as="image">
-    <link rel="preload" href="images/hair.jpg" as="image">
-    <link rel="preload" href="images/sofa.jpg" as="image">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<div class="parallax-bg">
-    <div class="parallax-layer layer-stars" data-speed="0.03"></div>
-    <div class="parallax-layer layer-red" data-speed="0.08"></div>
-</div>
 
+<!-- Фон -->
+<div class="bg-layer"></div>
+
+<!-- Снег -->
 <div class="snow-container"></div>
 
 <header class="header">
     <div class="container header-inner">
-        <a href="#top" class="logo">
+        <div class="logo">
             <span class="logo-icon">🤖</span>
-            <span class="logo-text">
+            <div>
                 <b>BOTMAKER</b>
                 <small>Telegram-автоматизация</small>
-            </span>
-        </a>
+            </div>
+        </div>
 
         <nav class="nav">
             <a href="#solution">Решение</a>
@@ -40,33 +35,33 @@
     </div>
 </header>
 
-<main id="top">
+<main>
 
 <!-- HERO -->
 <section class="hero">
     <div class="container hero-grid">
-        <div class="hero-text">
-            <span class="hero-tag">Telegram-боты под ключ</span>
+        <div>
+            <span class="hero-badge">Telegram-боты под ключ</span>
             <h1>
-                Бот, который принимает заявки<br>
-                и записи вместо вас — 24/7
+                Бот, который принимает<br>
+                заявки и записи за вас — 24/7
             </h1>
             <p class="hero-sub">
-                Клиенты сами выбирают услугу, время и оставляют заявку.<br>
-                Вы получаете готовые записи без переписок.
+                Клиенты сами выбирают услугу и время.<br>
+                Вы получаете готовые заявки без переписок.
             </p>
 
             <div class="hero-actions">
-                <a class="btn btn-primary" href="https://t.me/SmartCloser15Bot" target="_blank">
-                    Посмотреть примеры в Telegram
+                <a class="btn btn-main" href="https://t.me/SmartCloser15Bot" target="_blank">
+                    Посмотреть примеры
                 </a>
-                <a class="btn btn-outline" href="#contact">
+                <a class="btn btn-ghost" href="#contact">
                     Обсудить задачу
                 </a>
             </div>
 
             <p class="hero-note">
-                Без абонплаты · запуск за несколько дней · под ваш бизнес
+                🎄 Без абонплаты · запуск за 3–7 дней · под ваш бизнес
             </p>
         </div>
 
@@ -83,29 +78,29 @@
 </section>
 
 <!-- РЕШЕНИЕ -->
-<section class="section solution" id="solution">
+<section class="section" id="solution">
     <div class="container">
         <h2>Решение под ключ</h2>
-        <p class="solution-sub">
-            Не просто бот, а готовая система для приёма клиентов в Telegram
+        <p class="section-sub">
+            Не просто бот, а готовая система приёма клиентов в Telegram
         </p>
 
         <div class="solution-grid">
             <div class="solution-item">
                 <h4>Заявки и запись</h4>
-                <p>Клиент сам выбирает услугу и время — без переписок.</p>
+                <p>Клиент сам выбирает услугу и время.</p>
             </div>
             <div class="solution-item">
                 <h4>Google-таблица</h4>
-                <p>Все заявки сразу попадают в таблицу, как в CRM.</p>
+                <p>Все заявки как в CRM.</p>
             </div>
             <div class="solution-item">
                 <h4>Напоминания</h4>
-                <p>Бот сам напоминает клиентам о визите.</p>
+                <p>Бот снижает неявки.</p>
             </div>
             <div class="solution-item">
                 <h4>ИИ-ассистент</h4>
-                <p>Отвечает на частые вопросы и ведёт диалог.</p>
+                <p>Отвечает и ведёт диалог.</p>
             </div>
         </div>
     </div>
@@ -115,58 +110,48 @@
 <section class="section" id="portfolio">
     <div class="container">
         <h2>Примеры реальных ботов</h2>
-        <p class="section-sub">Живые проекты, которые уже работают у клиентов</p>
 
-        <div class="cards-grid">
-            <div class="bot-card">
+        <div class="cards">
+            <div class="card">
                 <img src="images/massage.jpg">
-                <h4>@myMassageSoulBot</h4>
-                <p>Запись на массаж, расписание, напоминания.</p>
+                <b>@myMassageSoulBot</b>
+                <p>Запись, расписание, напоминания</p>
             </div>
-
-            <div class="bot-card">
+            <div class="card">
                 <img src="images/hair.jpg">
-                <h4>@DariaHairProBot</h4>
-                <p>Ассистент для бьюти-мастера.</p>
+                <b>@DariaHairProBot</b>
+                <p>Ассистент для бьюти-мастера</p>
             </div>
-
-            <div class="bot-card">
+            <div class="card">
                 <img src="images/sofa.jpg">
-                <h4>@SofaMasterBot</h4>
-                <p>Заявки на дорогие заказы.</p>
+                <b>@SofaMasterBot</b>
+                <p>Заявки на дорогие заказы</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- ТАРИФЫ -->
-<section class="section prices" id="prices">
+<section class="section" id="prices">
     <div class="container">
         <h2>Тарифы</h2>
 
-        <div class="prices-grid">
-            <div class="price-card">
-                <h3>Простой бот</h3>
+        <div class="prices">
+            <div class="price">
+                <h4>Простой бот</h4>
                 <span>от 1 500 ₽</span>
-                <p>Инфо-бот или визитка</p>
             </div>
-
-            <div class="price-card accent">
-                <h3>Бот для заявок</h3>
+            <div class="price highlight">
+                <h4>Бот для заявок</h4>
                 <span>от 4 000 ₽</span>
-                <p>Заявки + Google-таблица</p>
             </div>
-
-            <div class="price-card">
-                <h3>Продвинутый бот</h3>
+            <div class="price">
+                <h4>Продвинутый бот</h4>
                 <span>от 8 000 ₽</span>
-                <p>Статусы, напоминания, mini-CRM</p>
             </div>
-
-            <div class="price-card">
-                <h3>ИИ-ассистент</h3>
+            <div class="price">
+                <h4>ИИ-ассистент</h4>
                 <span>от 10 000 ₽</span>
-                <p>GPT + память + диалоги</p>
             </div>
         </div>
     </div>
@@ -176,12 +161,9 @@
 <section class="section contact" id="contact">
     <div class="container">
         <h2>Обсудить проект</h2>
-        <p>
-            Напишите в Telegram, разберём задачу и скажу,
-            подойдёт ли вам бот.
-        </p>
+        <p>Напишите в Telegram — скажу, подойдёт ли вам бот.</p>
 
-        <a class="btn btn-primary" href="https://t.me/SmartCloser15Bot" target="_blank">
+        <a class="btn btn-main" href="https://t.me/SmartCloser15Bot" target="_blank">
             Написать в Telegram
         </a>
     </div>
