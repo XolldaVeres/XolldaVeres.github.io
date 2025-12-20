@@ -1,119 +1,235 @@
-/* ====== BotMaker — Parallax + Snow + Mobile menu ====== */
-document.addEventListener("DOMContentLoaded", () => {
-  initMobileNav();
-  initSnow();
-  initParallax();
-});
-
-/* ---- Mobile nav ---- */
-function initMobileNav() {
-  const burger = document.querySelector(".burger");
-  const nav = document.getElementById("mobileNav");
-  if (!burger || !nav) return;
-
-  const toggle = () => {
-    const opened = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!opened));
-    nav.style.display = opened ? "none" : "block";
-  };
-
-  burger.addEventListener("click", toggle);
-
-  // закрываем по клику на пункт
-  nav.querySelectorAll("a").forEach((a) => {
-    a.addEventListener("click", () => {
-      burger.setAttribute("aria-expanded", "false");
-      nav.style.display = "none";
-    });
-  });
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-/* ---- Snow (нормальный снег, не “пропал”) ---- */
-function initSnow() {
-  const container = document.querySelector(".snow");
-  if (!container) return;
-
-  // очищаем, если ты обновляешь скрипт “на лету”
-  container.innerHTML = "";
-
-  const isMobile = window.innerWidth < 980;
-  const count = isMobile ? 70 : 140;
-
-  for (let i = 0; i < count; i++) {
-    const f = document.createElement("span");
-    f.className = "snowflake";
-
-    const size = 2 + Math.random() * 4;          // 2..6px
-    const left = Math.random() * 100;            // %
-    const dur = 8 + Math.random() * 12;          // 8..20s
-    const delay = -Math.random() * dur;          // чтобы сразу “шёл”
-    const drift = (-60 + Math.random() * 120);   // -60..60px
-
-    f.style.width = `${size}px`;
-    f.style.height = `${size}px`;
-    f.style.left = `${left}%`;
-    f.style.animationDuration = `${dur}s`;
-    f.style.animationDelay = `${delay}s`;
-    f.style.setProperty("--drift", `${drift}px`);
-    f.style.opacity = "0";
-
-    container.appendChild(f);
-  }
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #050812;
+    color: #fff;
 }
 
-/* ---- Strong Parallax (3 слоя, реакция на scroll + чуть на mouse) ---- */
-function initParallax() {
-  const layers = Array.from(document.querySelectorAll(".bg-layer"));
-  if (!layers.length) return;
+/* HEADER */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(5,8,18,0.8);
+    backdrop-filter: blur(10px);
+    z-index: 20;
+}
 
-  let scrollY = window.scrollY || 0;
-  let mouseX = 0;
-  let mouseY = 0;
-  let raf = null;
+.header-inner {
+    max-width: 1200px;
+    margin: auto;
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-  function onScroll() {
-    scrollY = window.scrollY || 0;
-    requestTick();
-  }
+.header nav a {
+    color: #cfd6f0;
+    margin-left: 18px;
+    text-decoration: none;
+}
 
-  function onMouseMove(e) {
-    // мягкая реакция, чтобы “глубина” была даже без скролла
-    const w = window.innerWidth || 1;
-    const h = window.innerHeight || 1;
-    mouseX = (e.clientX / w - 0.5) * 2; // -1..1
-    mouseY = (e.clientY / h - 0.5) * 2; // -1..1
-    requestTick();
-  }
+/* PARALLAX */
+.parallax-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
 
-  function requestTick() {
-    if (raf) return;
-    raf = requestAnimationFrame(update);
-  }
+.parallax-layer {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    will-change: transform;
+}
 
-  function update() {
-    raf = null;
+.layer-bg {
+    background-image: url("images/parallax-bg.jpg");
+    z-index: 1;
+}
 
-    // ограничение, чтобы на больших страницах не улетало
-    const s = Math.min(scrollY, 2400);
+.layer-mid {
+    background-image: url("images/parallax-mid.png");
+    opacity: 0.6;
+    z-index: 2;
+}
 
-    layers.forEach((layer) => {
-      const depth = parseFloat(layer.dataset.depth || "0.1");
+.layer-front {
+    background-image: url("images/parallax-front.png");
+    opacity: 0.8;
+    z-index: 3;
+}
 
-      // scroll параллакс (основной)
-      const ty = -(s * depth);
+.parallax-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(5,8,18,0.5),
+        rgba(5,8,18,0.85)
+    );
+    z-index: 4;
+}
 
-      // чуть “живости” от мыши
-      const tx = mouseX * (depth * 16);
-      const my = mouseY * (depth * 10);
+/* HERO CONTENT */
+.hero-content {
+    position: relative;
+    z-index: 5;
+    max-width: 900px;
+    margin: auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
-      layer.style.transform = `translate3d(${tx}px, ${ty + my}px, 0) scale(1.05)`;
-    });
-  }
+.badge {
+    color: #9ad3ff;
+    margin-bottom: 14px;
+    font-weight: 600;
+}
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("mousemove", onMouseMove, { passive: true });
-  window.addEventListener("resize", () => requestTick(), { passive: true });
+.hero-content h1 {
+    font-size: 44px;
+    margin-bottom: 16px;
+    line-height: 1.15;
+}
 
-  // стартовое состояние
-  requestTick();
+.hero-content h1 span {
+    color: #ffb25c;
+}
+
+.hero-content p {
+    font-size: 18px;
+    color: #cfd6f0;
+    margin-bottom: 26px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 16px;
+}
+
+.hero-note {
+    color: #9aa4d1;
+    font-size: 14px;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 14px 26px;
+    border-radius: 999px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn.main {
+    background: linear-gradient(135deg, #ff6a3d, #ffb25c);
+    color: #000;
+}
+
+.btn.ghost {
+    border: 1px solid #fff;
+    color: #fff;
+}
+
+/* SECTIONS */
+.section {
+    padding: 90px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #aab1d4;
+    margin-bottom: 30px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #0b1224;
+    padding: 22px;
+    border-radius: 18px;
+}
+
+/* PORTFOLIO */
+.portfolio {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: #0b1224;
+    padding: 16px;
+    border-radius: 18px;
+}
+
+.portfolio-item img {
+    width: 100%;
+    border-radius: 14px;
+    margin-bottom: 10px;
+}
+
+/* PRICES */
+.prices {
+    display: grid;
+    gap: 16px;
+}
+
+.price {
+    background: #0b1224;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.price.highlight {
+    border: 1px solid #ffb25c;
+}
+
+/* CONTACT */
+.contact {
+    text-align: center;
+}
+
+/* FOOTER */
+.footer {
+    padding: 30px;
+    text-align: center;
+    color: #9aa4d1;
+}
+
+/* ADAPTIVE */
+@media (max-width: 900px) {
+    .cards,
+    .portfolio {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
 }
