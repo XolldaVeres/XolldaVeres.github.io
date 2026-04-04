@@ -1,0 +1,62 @@
+.container {
+    width: min(var(--container), calc(100% - 32px));
+    margin: 0 auto;
+}
+
+.section {
+    padding: 110px 0;
+    position: relative;
+}
+
+.section--dark {
+    background:
+        radial-gradient(circle at 20% 20%, rgba(139, 92, 246, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.06), transparent 30%),
+        linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+
+    border-top: 1px solid rgba(255,255,255,0.06);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.section--contact {
+    padding-top: 100px;
+    padding-bottom: 120px;
+}
+
+.section-grid {
+    display: grid;
+    gap: 28px;
+}
+
+.section-grid--about {
+    grid-template-columns: 320px minmax(0, 1fr);
+    align-items: start;
+}
+
+.section-grid--stack {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.section-heading h2 {
+    margin: 0;
+    font-size: clamp(32px, 4vw, 54px);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+}
+
+.section-kicker {
+    margin: 0 0 12px;
+    color: #bda8ff;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    font-size: 12px;
+}
+
+.section-note {
+    margin-top: 14px;
+    max-width: 800px;
+    color: var(--text-soft);
+    line-height: 1.65;
+}
