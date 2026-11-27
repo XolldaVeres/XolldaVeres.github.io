@@ -1,0 +1,374 @@
+/* Project detail and its image viewer. */
+html.pd-scroll-lock {
+  overflow: hidden;
+}
+
+.project-dialog {
+  --pd-surface: #18231e;
+  --pd-line: #3f4d42;
+  --pd-text: #f1f3e9;
+  --pd-muted: #c7cec0;
+  --pd-accent: #c6e7ad;
+  position: fixed;
+  inset: 0;
+  width: min(65rem, calc(100% - 3rem));
+  max-width: none;
+  max-height: calc(100vh - 3rem);
+  max-height: calc(100dvh - 3rem);
+  box-sizing: border-box;
+  padding: 0;
+  margin: auto;
+  border: 1px solid #59695b;
+  border-radius: 1rem;
+  background: var(--pd-surface);
+  color: var(--pd-text);
+  color-scheme: dark;
+  font-family: inherit;
+  text-align: start;
+  overflow: auto;
+  overscroll-behavior: contain;
+  scrollbar-color: #6b7d69 var(--pd-surface);
+  box-shadow: 0 2rem 7rem #020805a3;
+}
+
+.project-dialog::backdrop {
+  background: rgb(4 10 7 / 86%);
+}
+
+.project-dialog .pd-panel {
+  padding: clamp(1.1rem, 3.4vw, 2.25rem);
+}
+
+.project-dialog .pd-header,
+.project-dialog .pd-controls,
+.project-dialog .pd-pages {
+  display: flex;
+  align-items: center;
+}
+
+.project-dialog .pd-header {
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.25rem;
+  margin: 0 0 1.35rem;
+  padding: 0 0 1.2rem;
+  border-bottom: 1px solid var(--pd-line);
+  background: var(--pd-surface);
+}
+
+.project-dialog #pd-title {
+  margin: 0;
+  color: var(--pd-text);
+  font: inherit;
+  font-size: clamp(1.55rem, 2.6vw, 2.45rem);
+  font-weight: 550;
+  line-height: 1.14;
+  letter-spacing: normal;
+  text-wrap: balance;
+}
+
+.project-dialog .pd-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(14rem, .95fr);
+  align-items: start;
+  gap: clamp(1.4rem, 3vw, 2.25rem);
+}
+
+.project-dialog .pd-no-gallery {
+  grid-template-columns: minmax(0, 42rem);
+}
+
+.project-dialog .pd-gallery,
+.project-dialog .pd-info {
+  min-width: 0;
+}
+
+.project-dialog .pd-view {
+  height: clamp(15rem, 47vh, 31rem);
+  height: clamp(15rem, 47dvh, 31rem);
+  overflow: auto;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  border: 1px solid var(--pd-line);
+  border-radius: .65rem;
+  background: radial-gradient(ellipse at 50% 25%, #203127, #101b15 75%);
+  scrollbar-color: #63765f #132118;
+}
+
+.project-dialog .pd-mat {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  box-sizing: border-box;
+  padding: .85rem;
+}
+
+.project-dialog .pd-image {
+  display: block;
+  width: var(--pd-source-width, auto);
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  min-height: 0;
+  object-fit: contain;
+  border: none;
+  border-radius: 0;
+}
+
+.project-dialog .pd-enlarged .pd-mat {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: max-content;
+  min-width: 100%;
+  height: max-content;
+  min-height: 100%;
+}
+
+.project-dialog .pd-enlarged .pd-image {
+  width: var(--pd-enlarged-width, auto);
+  max-width: none;
+  height: auto;
+  max-height: none;
+}
+
+.project-dialog .pd-controls {
+  justify-content: space-between;
+  gap: .6rem;
+  margin-top: .55rem;
+}
+
+.project-dialog .pd-pages {
+  justify-content: flex-end;
+  gap: .55rem;
+}
+
+.project-dialog .pd-count {
+  min-width: 2.25rem;
+  text-align: center;
+  color: var(--pd-muted);
+  font-size: .93rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.project-dialog .pd-btn,
+.project-dialog .pd-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  appearance: none;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  box-sizing: border-box;
+  padding: .55rem .85rem;
+  border: 1px solid #607162;
+  border-radius: .48rem;
+  font: inherit;
+  font-size: .95rem;
+  font-weight: 550;
+  line-height: 1.2;
+  color: var(--pd-text);
+  background: transparent;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 120ms, border-color 120ms, transform 80ms;
+}
+
+.project-dialog .pd-close {
+  flex-shrink: 0;
+}
+
+.project-dialog .pd-btn svg {
+  width: 1.12rem;
+  height: 1.12rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.project-dialog .pd-prev,
+.project-dialog .pd-next {
+  padding: .55rem;
+}
+
+.project-dialog .pd-zoom {
+  border-color: transparent;
+  color: var(--pd-accent);
+}
+
+.project-dialog .pd-frame-caption {
+  margin-top: .95rem;
+}
+
+.project-dialog .pd-frame-title {
+  margin: 0;
+  font: inherit;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.3;
+  color: var(--pd-text);
+}
+
+.project-dialog .pd-caption {
+  margin: .32rem 0 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--pd-muted);
+}
+
+.project-dialog .pd-status {
+  margin: 0 0 1rem;
+  color: var(--pd-accent);
+  font-size: .9rem;
+  font-weight: 550;
+  line-height: 1.5;
+}
+
+.project-dialog .pd-body {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--pd-text);
+}
+
+.project-dialog .pd-body p { margin: 0; }
+.project-dialog .pd-body p + p { margin-top: .75rem; }
+
+.project-dialog .pd-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem;
+  margin-top: 1.3rem;
+}
+
+.project-dialog .pd-action:first-child {
+  border-color: var(--pd-accent);
+  color: #162417;
+  background: var(--pd-accent);
+}
+
+.project-dialog .pd-btn:active,
+.project-dialog .pd-action:active {
+  transform: translateY(1px);
+  border-color: var(--pd-accent);
+}
+
+.project-dialog :is(.pd-btn, .pd-action, .pd-view):focus-visible {
+  outline: 3px solid var(--pd-accent);
+  outline-offset: 3px;
+}
+
+.project-dialog .pd-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+.project-dialog [hidden] { display: none; }
+
+@media (hover: hover) {
+  .project-dialog .pd-btn:hover,
+  .project-dialog .pd-action:hover {
+    border-color: #a0b197;
+    background: #2d3b31;
+  }
+
+  .project-dialog .pd-action:first-child:hover {
+    border-color: #def3c9;
+    background: #def3c9;
+  }
+}
+
+@media (max-width: 43rem) {
+  .project-dialog {
+    width: calc(100% - 1rem);
+    max-height: calc(100vh - 1rem);
+    max-height: calc(100dvh - 1rem);
+    border-radius: .75rem;
+  }
+
+  .project-dialog .pd-header {
+    z-index: 1;
+    position: sticky;
+    top: -1px;
+    align-items: center;
+    padding-block: .65rem .8rem;
+    margin-block: -.6rem .85rem;
+    gap: .6rem;
+  }
+
+  .project-dialog .pd-close {
+    padding: .55rem;
+  }
+
+  .project-dialog .pd-close span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .project-dialog .pd-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+  }
+
+  .project-dialog .pd-view {
+    height: clamp(12rem, 43dvh, 22rem);
+  }
+
+  .project-dialog .pd-mat { padding: .55rem; }
+
+  .project-dialog .pd-info {
+    padding-top: 1rem;
+    border-top: 1px solid var(--pd-line);
+  }
+
+  .project-dialog .pd-no-gallery .pd-info {
+    border: none;
+    padding: 0;
+  }
+}
+
+/* Only visual blocks carry data-tilt; text, links and buttons keep their position. */
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  [data-tilt] {
+    transform: perspective(1000px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    transition: transform 160ms ease-out;
+  }
+}
+
+@media (hover: none) {
+  [data-project]:active [data-tilt] { filter: brightness(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-dialog .pd-btn,
+  .project-dialog .pd-action { transition: none; }
+}
+
+/* Match the short button feedback; keep touch and reduced-motion geometry still. */
+.project-dialog .pd-btn, .project-dialog .pd-action {
+  transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease;
+}
+.project-dialog .pd-btn:active, .project-dialog .pd-action:active { transform: none; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .project-dialog .pd-btn, .project-dialog .pd-action {
+    transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+  .project-dialog .pd-btn:active, .project-dialog .pd-action:active { transform: translateY(1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .project-dialog .pd-btn, .project-dialog .pd-action { transition: none; transform: none; }
+}

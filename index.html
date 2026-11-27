@@ -1,672 +1,629 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <title>Василий Осипов — AI Automation Developer</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-        name="description"
-        content="Василий Осипов — Python разработчик / AI Automation Developer. Telegram-боты, AI-интеграции, автоматизация бизнес-процессов, лидогенерация, CRM-логика."
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/base.css" />
-    <link rel="stylesheet" href="css/layout.css" />
-    <link rel="stylesheet" href="css/components.css" />
-    <link rel="stylesheet" href="css/sections.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111b19">
+  <meta name="description" content="Портфолио Василия Осипова. Telegram-боты для записи, заявок, диалогов и работы с инструкциями. Реальные экраны проектов и игра Fortress.">
+  <title>Василий Осипов — Telegram-боты и проекты</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23142320'/%3E%3Cpath d='M6 7h15v12h-9l-6 4zM24 12h2v14l-5-4h-6' fill='none' stroke='%23c5e6ad' stroke-width='1.7'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="dialog.css">
+  <script defer src="ui.js"></script>
+  <script defer src="filter.js"></script>
 </head>
-<body>
-    <div class="intro" id="intro">
-        <div class="intro__grid"></div>
-        <div class="intro__content">
-            <p class="intro__label">initializing portfolio system...</p>
-            <pre class="intro__code"><code id="typed-code"></code></pre>
-            <div class="intro__status">
-                <span class="status-dot"></span>
-                <span>loading interface</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="site-bg"></div>
-    <div class="site-noise"></div>
-    <div class="orb orb--one"></div>
-    <div class="orb orb--two"></div>
-
-    <header class="header" id="header">
-        <div class="container header__inner">
-            <a href="#top" class="brand">
-                <span class="brand__mark">&lt;/&gt;</span>
-                <div class="brand__text">
-                    <span class="brand__title">VASILII OSIPOV</span>
-                    <span class="brand__sub">AI Automation Developer</span>
-                </div>
-            </a>
-
-            <nav class="nav">
-                <a href="#about">Обо мне</a>
-                <a href="#value">Ценность</a>
-                <a href="#cases">Кейсы</a>
-                <a href="#screens">Скрины</a>
-                <a href="#stack">Стек</a>
-                <a href="#contact">Контакты</a>
-            </nav>
-
-            <a class="header__cta" href="#contact">Связаться</a>
-
-            <button class="burger" id="burger" aria-label="Открыть меню">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-
-        <div class="mobile-menu" id="mobile-menu">
-            <a href="#about">Обо мне</a>
-            <a href="#value">Ценность</a>
-            <a href="#cases">Кейсы</a>
-            <a href="#screens">Скрины</a>
-            <a href="#stack">Стек</a>
-            <a href="#contact">Контакты</a>
-        </div>
-    </header>
-
-    <main>
-        <section class="hero" id="top">
-            <div class="container hero__inner">
-                <div class="hero__left reveal">
-                    <div class="eyebrow">
-                        <span class="eyebrow__dot"></span>
-                        Python developer / AI automation developer
-                    </div>
-
-                    <h1 class="hero__title">
-                        Проектирую и создаю
-                        <span>Telegram-ботов, AI-ассистентов</span>
-                        и системы автоматизации
-                        для бизнеса
-                    </h1>
-
-                    <p class="hero__desc">
-                        Я не просто пишу код. Я собираю рабочие сценарии:
-                        заявки, запись клиентов, лидогенерацию, CRM-логику,
-                        AI-диалоги, воронки и внутреннюю автоматизацию.
-                    </p>
-
-                    <div class="hero__chips">
-                        <span>Python</span>
-                        <span>Telegram Bot API</span>
-                        <span>AI Tools</span>
-                        <span>Automation</span>
-                        <span>CRM Logic</span>
-                        <span>Linux</span>
-                    </div>
-
-                    <div class="hero__actions">
-                        <a class="btn btn--primary" href="#cases">Смотреть кейсы</a>
-                        <a class="btn btn--ghost" href="#contact">Оставить заявку</a>
-                    </div>
-
-                    <div class="hero__facts">
-                        <div class="fact-card">
-                            <strong>3+ года</strong>
-                            <span>практики в Telegram-автоматизации</span>
-                        </div>
-                        <div class="fact-card">
-                            <strong>10–15+</strong>
-                            <span>проектов и рабочих сценариев</span>
-                        </div>
-                        <div class="fact-card">
-                            <strong>AI + Bots</strong>
-                            <span>комбинация автоматизации и AI-инструментов</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="hero__right reveal reveal-delay-1">
-                    <div class="profile-card">
-                        <div class="profile-card__glow"></div>
-                        <div class="profile-card__image-wrap">
-                            <img src="images/port1.jpg" alt="Василий Осипов" class="profile-card__image" />
-                        </div>
-
-                        <div class="profile-card__body">
-                            <div class="profile-card__top">
-                                <p class="profile-card__label">portfolio identity</p>
-                                <h2>Василий Осипов</h2>
-                                <p class="profile-card__role">
-                                    Python разработчик / AI Automation Developer
-                                </p>
-                            </div>
-
-                            <div class="profile-card__list">
-                                <div class="mini-row">
-                                    <span class="mini-row__key">Фокус</span>
-                                    <span class="mini-row__value">Telegram-боты, AI, автоматизация</span>
-                                </div>
-                                <div class="mini-row">
-                                    <span class="mini-row__key">Сильная сторона</span>
-                                    <span class="mini-row__value">Сценарии, логика, рабочие системы</span>
-                                </div>
-                                <div class="mini-row">
-                                    <span class="mini-row__key">Подходит для</span>
-                                    <span class="mini-row__value">бизнеса, найма, проектной работы</span>
-                                </div>
-                            </div>
-
-                            <div class="profile-card__contacts">
-                                <a href="https://t.me/CVmorion" target="_blank" rel="noopener">Telegram</a>
-                                <a href="https://wa.me/79990804597" target="_blank" rel="noopener">WhatsApp</a>
-                                <a href="tel:+79990804597">Позвонить</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="about">
-            <div class="container section-grid section-grid--about">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">кратко обо мне</p>
-                    <h2>Кто я как специалист</h2>
-                </div>
-
-                <div class="content-card reveal reveal-delay-1">
-                    <p class="lead-text">
-                        Python разработчик / AI automation developer.
-                        С января 2023 по январь 2026 занимался разработкой
-                        и проектированием Telegram-ботов для автоматизации
-                        бизнес-процессов.
-                    </p>
-
-                    <div class="text-grid">
-                        <div>
-                            <h3>Основные задачи</h3>
-                            <ul class="clean-list">
-                                <li>разработка Telegram-ботов на Python</li>
-                                <li>проектирование пользовательских сценариев и логики</li>
-                                <li>автоматизация обработки заявок и обращений клиентов</li>
-                                <li>интеграция AI-инструментов и систем обработки данных</li>
-                                <li>создание лидогенерационных систем и автоматизированных воронок</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Как я мыслю в проектах</h3>
-                            <ul class="clean-list">
-                                <li>сначала понимаю бизнес-процесс, а не просто “делаю бота”</li>
-                                <li>собираю сценарий общения и путь пользователя</li>
-                                <li>думаю о заявках, конверсии, данных и удобстве</li>
-                                <li>делаю систему, которую можно развивать дальше</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--dark" id="value">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">ценность для работодателя</p>
-                    <h2>Что вы получаете, когда берете меня в проект</h2>
-                </div>
-
-                <div class="value-grid">
-                    <article class="value-card reveal">
-                        <span class="value-card__num">01</span>
-                        <h3>Не просто код, а логика продукта</h3>
-                        <p>
-                            Я думаю сценариями: куда нажмет пользователь, где
-                            оставить заявку, как не терять клиента и как автоматизировать
-                            рутину.
-                        </p>
-                    </article>
-
-                    <article class="value-card reveal reveal-delay-1">
-                        <span class="value-card__num">02</span>
-                        <h3>Опыт именно в Telegram и автоматизации</h3>
-                        <p>
-                            Не абстрактная теория, а практические боты:
-                            запись, заявки, прогрев, AI-ассистенты, таблицы,
-                            CRM-логика, уведомления.
-                        </p>
-                    </article>
-
-                    <article class="value-card reveal reveal-delay-2">
-                        <span class="value-card__num">03</span>
-                        <h3>Быстрый вход в задачу</h3>
-                        <p>
-                            Я умею разбирать хаос в нормальную систему:
-                            собрать структуру, понять требования и довести
-                            до рабочего результата.
-                        </p>
-                    </article>
-
-                    <article class="value-card reveal">
-                        <span class="value-card__num">04</span>
-                        <h3>AI как усиление, а не просто слово</h3>
-                        <p>
-                            Могу встроить AI туда, где он реально нужен:
-                            ответы клиентам, объяснение услуг, прогрев,
-                            интерактив, работа с контекстом.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-                <!-- КЕЙС 1: РОЛЕВОЙ БОТ (ГОТОВЫЙ ПРОДУКТ) -->
-        <section class="section--case" id="case-roleplay">
-            <div class="container">
-                <div class="case-header reveal">
-                    <span class="case-tag" style="margin-bottom: 12px; display: inline-block;">🎭 Готовый продукт / Монетизация</span>
-                    <h2 style="margin: 8px 0 16px 0;">Ролевой Telegram-бот с ИИ и подпиской</h2>
-                    <p class="lead-text" style="max-width: 900px;">
-                        Это готовый Telegram-продукт, а не услуга и не разработка с нуля.
-                        Вы получаете полностью собранную систему монетизации через живое ИИ-общение: персонажи, сценарии, подписки и лимиты уже настроены и работают как единая логика.
-                    </p>
-                </div>
-                <div class="content-card">
-                    <p><strong>🔥 Что внутри:</strong> живое диалоговое общение (не шаблоны), несколько персонажей с разным характером, сценарии общения (квартира, ночь, прогулка и др.), подписки/лимиты/логика удержания, полностью рабочий Telegram-бот (код и структура).</p>
-                    <p><strong>📈 Как обычно используют формат:</strong> подписка 400–3000 ₽, 100 активных пользователей ≈ 40–100 тыс. ₽/мес. (это не гарантия, а математика модели).</p>
-                    <p><strong>✅ Кому подойдёт:</strong> если хотите запустить монетизацию в Telegram через подписку (даже без канала), если у вас есть канал/чат и вы хотите удержание + платные лимиты, если нужен готовый продукт "под ключ".</p>
-                    <p><strong>🎁 Передача:</strong> настраиваю под ваш проект, запускаю и проверяю работу, передаю код и доступы + пошаговая инструкция.</p>
-                </div>
-                
-                <!-- Сетка скринов для ролевого бота -->
-                <div class="case-screens-grid">
-                    <figure class="screen-card reveal">
-                        <img src="images/rol1.jpg" alt="Ролевой бот скрин 1" />
-                        <figcaption>Диалог с персонажем, атмосфера.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-1">
-                        <img src="images/rol2.jpg" alt="Ролевой бот скрин 2" />
-                        <figcaption>Система подписок и лимитов.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-2">
-                        <img src="images/rol3.jpg" alt="Ролевой бот скрин 3" />
-                        <figcaption>Выбор сценария общения.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal">
-                        <img src="images/rol4.jpg" alt="Ролевой бот скрин 4" />
-                        <figcaption>Меню персонажей.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-1">
-                        <img src="images/rol5.jpg" alt="Ролевой бот скрин 5" />
-                        <figcaption>Тарифы и подписки.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-2">
-                        <img src="images/rol6.jpg" alt="Ролевой бот скрин 6" />
-                        <figcaption>Лимиты и уведомления.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal">
-                        <img src="images/rol7.jpg" alt="Ролевой бот скрин 7" />
-                        <figcaption>Админ-панель и статистика.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <!-- КЕЙС 2: БОТ ДЛЯ МАССАЖИСТА (ЗАПИСЬ / АВТОМАТИЗАЦИЯ) -->
-        <section class="section--case section--dark" id="case-massage">
-            <div class="container">
-                <div class="case-header reveal">
-                    <span class="case-tag" style="margin-bottom: 12px; display: inline-block;">💆‍♂️ Автоматизация записи / Заявки</span>
-                    <h2 style="margin: 8px 0 16px 0;">Telegram-бот для записи клиентов (Массаж / Beauty)</h2>
-                    <p class="lead-text" style="max-width: 900px;">
-                        Если запись идёт через личные сообщения, вы тратите часы на однотипные ответы. И всё равно часть клиентов "подумают и исчезнут".
-                        Эта система автоматизирует первичный диалог и доводит клиента до конкретного времени записи.
-                    </p>
-                </div>
-                <div class="content-card">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-                        <div>
-                            <h3>Что вы видите:</h3>
-                            <ul class="benefits-list">
-                                <li>кто записался</li>
-                                <li>на когда</li>
-                                <li>комментарии</li>
-                                <li>всю историю</li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h3>Результат:</h3>
-                            <ul class="benefits-list">
-                                <li>Без потерь. Без путаницы. Без лишней переписки.</li>
-                                <li>Если система вернёт вам хотя бы 2–3 заявки в месяц — она уже окупается.</li>
-                                <li>Удобное расписание, услуги, сертификаты, курсы.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Сетка скринов для массаж бота -->
-                <div class="case-screens-grid">
-                    <figure class="screen-card reveal">
-                        <img src="images/mas1.jpg" alt="Массаж бот скрин 1" />
-                        <figcaption>Приветствие и выбор услуги.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-1">
-                        <img src="images/mas2.jpg" alt="Массаж бот скрин 2" />
-                        <figcaption>Выбор времени и даты записи.</figcaption>
-                    </figure>
-                    <figure class="screen-card reveal reveal-delay-2">
-                        <img src="images/mas3.jpg" alt="Массаж бот скрин 3" />
-                        <figcaption>Подтверждение и уведомление.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="cases">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">реализованные проекты</p>
-                    <h2>Кейсы и типы систем, которые я делал</h2>
-                </div>
-
-                <div class="cases-grid">
-                    <article class="case-card reveal">
-                        <div class="case-card__top">
-                            <span class="case-tag">Запись клиентов</span>
-                            <h3>Telegram-бот для специалиста по массажу</h3>
-                        </div>
-                        <p>
-                            Автоматизация записи клиентов, презентация услуг,
-                            ответы на частые вопросы и сбор заявок.
-                        </p>
-                        <ul class="clean-list">
-                            <li>запись через бота без лишней переписки</li>
-                            <li>подача услуг в понятной структуре</li>
-                            <li>снижение ручной нагрузки на специалиста</li>
-                        </ul>
-                    </article>
-
-                    <article class="case-card reveal reveal-delay-1">
-                        <div class="case-card__top">
-                            <span class="case-tag">Консультации</span>
-                            <h3>Бот для психологических консультаций</h3>
-                        </div>
-                        <p>
-                            Проект через Kwork: автоматизация обработки входящих
-                            обращений и запись на консультации.
-                        </p>
-                        <ul class="clean-list">
-                            <li>структурирование первого контакта</li>
-                            <li>сбор ключевой информации от клиента</li>
-                            <li>упрощение воронки записи</li>
-                        </ul>
-                    </article>
-
-                    <article class="case-card reveal reveal-delay-2">
-                        <div class="case-card__top">
-                            <span class="case-tag">Монетизация</span>
-                            <h3>Ролевой Telegram-бот с системой монетизации</h3>
-                        </div>
-                        <p>
-                            Реализованы тарифные планы, реферальная программа
-                            и отслеживание источников трафика.
-                        </p>
-                        <ul class="clean-list">
-                            <li>монетизационная логика внутри бота</li>
-                            <li>реферальная система</li>
-                            <li>учет источников трафика</li>
-                        </ul>
-                    </article>
-
-                    <article class="case-card reveal">
-                        <div class="case-card__top">
-                            <span class="case-tag">Лиды / CRM</span>
-                            <h3>Лидогенерационные Telegram-боты для бизнеса</h3>
-                        </div>
-                        <p>
-                            Системы обработки заявок и хранения данных пользователей,
-                            по сути CRM-логика внутри бота.
-                        </p>
-                        <ul class="clean-list">
-                            <li>анкеты и сбор заявок</li>
-                            <li>структурирование контактов и лидов</li>
-                            <li>сохранение данных для дальнейшей работы</li>
-                        </ul>
-                    </article>
-
-                    <article class="case-card reveal reveal-delay-1">
-                        <div class="case-card__top">
-                            <span class="case-tag">AI</span>
-                            <h3>AI-ассистенты и диалоговые системы</h3>
-                        </div>
-                        <p>
-                            Использование AI-инструментов в ботах для объяснения услуг,
-                            сопровождения клиента и интерактивного общения.
-                        </p>
-                        <ul class="clean-list">
-                            <li>AI-диалоги под сценарий проекта</li>
-                            <li>подача информации вместо оператора</li>
-                            <li>повышение вовлеченности пользователя</li>
-                        </ul>
-                    </article>
-
-                    <article class="case-card reveal reveal-delay-2">
-                        <div class="case-card__top">
-                            <span class="case-tag">Портфолио-боты</span>
-                            <h3>Системы-презентации услуг в Telegram</h3>
-                        </div>
-                        <p>
-                            Боты как цифровая визитка: примеры работ, логика меню,
-                            заявки, описание услуг, навигация, контент и первичная воронка.
-                        </p>
-                        <ul class="clean-list">
-                            <li>удобная презентация себя или бизнеса</li>
-                            <li>меню, навигация и контент-блоки</li>
-                            <li>заявки и входящий интерес в одном месте</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--dark">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">портфолио по названиям</p>
-                    <h2>Примеры проектов и ботов</h2>
-                </div>
-
-                <div class="project-list">
-                    <div class="project-chip reveal">@myMassageSoulBot</div>
-                    <div class="project-chip reveal reveal-delay-1">@DariaHairProBot</div>
-                    <div class="project-chip reveal reveal-delay-2">@SofaMasterBot</div>
-                    <div class="project-chip reveal">@LeadHarvesterBot</div>
-                    <div class="project-chip reveal reveal-delay-1">@myClientFlowBot</div>
-                    <div class="project-chip reveal reveal-delay-2">SimpleCRMbot</div>
-                    <div class="project-chip reveal">@SmartCloser15Bot</div>
-                    <div class="project-chip reveal reveal-delay-1">@LifeSenseAIbot</div>
-                    <div class="project-chip reveal reveal-delay-2">@mySoulTarotBot</div>
-                    <div class="project-chip reveal">@AfterDarkStayBot</div>
-                    <div class="project-chip reveal reveal-delay-1">@mySoulRelaxBot</div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="screens">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">визуальные примеры</p>
-                    <h2>Скрины ботов и интерфейсов</h2>
-                    <p class="section-note">
-                        Ниже можно показать живые экраны, меню, заявки, ответы AI,
-                        диалоги и навигацию внутри ботов.
-                    </p>
-                </div>
-
-                <div class="screens-grid">
-                    <figure class="screen-card reveal">
-                        <img src="images/screen-massage.jpg" alt="Скрин бота для массажиста" />
-                        <figcaption>Бот для записи и презентации услуг.</figcaption>
-                    </figure>
-
-                    <figure class="screen-card reveal reveal-delay-1">
-                        <img src="images/screen-kindergarten.jpg" alt="Скрин бота для консультаций" />
-                        <figcaption>Обработка первичных обращений и запись на консультацию.</figcaption>
-                    </figure>
-
-                    <figure class="screen-card reveal reveal-delay-2">
-                        <img src="images/screen-smartcloser.jpg" alt="Скрин ролевого Telegram-бота" />
-                        <figcaption>Монетизация, тарифы, внутренняя логика продукта.</figcaption>
-                    </figure>
-
-                    <figure class="screen-card reveal">
-                        <img src="images/clientflow.jpg" alt="Скрин лидогенерационного бота" />
-                        <figcaption>Сбор заявок, анкеты, логика лидогенерации.</figcaption>
-                    </figure>
-
-                    <figure class="screen-card reveal reveal-delay-1">
-                        <img src="images/crm.jpg" alt="Скрин CRM-бота" />
-                        <figcaption>CRM-логика и структурирование обращений.</figcaption>
-                    </figure>
-
-                    <figure class="screen-card reveal reveal-delay-2">
-                        <img src="images/screen-tarot.jpg" alt="Скрин AI-бота" />
-                        <figcaption>AI-ассистент, диалоговая логика и объяснение услуг.</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section--dark" id="stack">
-            <div class="container section-grid section-grid--stack">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">технологии</p>
-                    <h2>Технологический стек</h2>
-                </div>
-
-                <div class="content-card reveal reveal-delay-1">
-                    <div class="stack-tags">
-                        <span>Python</span>
-                        <span>Telegram Bot API</span>
-                        <span>aiogram</span>
-                        <span>AI tools</span>
-                        <span>automation</span>
-                        <span>business process automation</span>
-                        <span>lead generation</span>
-                        <span>CRM logic</span>
-                        <span>Google Sheets</span>
-                        <span>SQLite</span>
-                        <span>Linux</span>
-                        <span>API integrations</span>
-                    </div>
-
-                    <div class="stack-columns">
-                        <div>
-                            <h3>Что умею делать</h3>
-                            <ul class="clean-list">
-                                <li>боты под конкретную нишу</li>
-                                <li>логика меню и сценариев</li>
-                                <li>сбор лидов и заявок</li>
-                                <li>связка с таблицами и хранилищем данных</li>
-                                <li>AI-функции внутри пользовательского опыта</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h3>Где особенно силен</h3>
-                            <ul class="clean-list">
-                                <li>разложить задачу на понятную механику</li>
-                                <li>сделать взаимодействие удобным</li>
-                                <li>превратить идею в рабочую систему</li>
-                                <li>не терять смысл бизнеса за кодом</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="process">
-            <div class="container">
-                <div class="section-heading reveal">
-                    <p class="section-kicker">как я подхожу к работе</p>
-                    <h2>Рабочий процесс</h2>
-                </div>
-
-                <div class="timeline">
-                    <article class="timeline-card reveal">
-                        <span>01</span>
-                        <h3>Понимание задачи</h3>
-                        <p>
-                            Сначала разбираю, что реально нужно проекту:
-                            запись, лиды, объяснение услуг, AI, воронка, внутренняя логика.
-                        </p>
-                    </article>
-
-                    <article class="timeline-card reveal reveal-delay-1">
-                        <span>02</span>
-                        <h3>Проектирование сценария</h3>
-                        <p>
-                            Продумываю путь пользователя, кнопки, шаги,
-                            вопросы, точки захвата контакта и структуру данных.
-                        </p>
-                    </article>
-
-                    <article class="timeline-card reveal reveal-delay-2">
-                        <span>03</span>
-                        <h3>Сборка системы</h3>
-                        <p>
-                            Реализую логику, интеграции, формы, AI-функции,
-                            таблицы, уведомления и нужную механику.
-                        </p>
-                    </article>
-
-                    <article class="timeline-card reveal">
-                        <span>04</span>
-                        <h3>Доработка под результат</h3>
-                        <p>
-                            Улучшаю пользовательский путь, тексты, поведение бота
-                            и удобство использования, чтобы система реально работала.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-<section class="section section--contact" id="contact">
-    <div class="container">
-        <div class="contact-box reveal">
-            <div class="contact-box__left">
-                <p class="section-kicker">контакты</p>
-                <h2>Связаться со мной</h2>
-                <p class="contact-text">
-                    Можно написать по проекту, по вакансии, по сотрудничеству
-                    или просто обсудить задачу.
-                </p>
-            </div>
-
-            <div class="contact-box__right">
-                <a class="contact-link" href="https://t.me/CVmorion" target="_blank" rel="noopener">
-                    <span class="contact-link__title">Telegram</span>
-                    <span class="contact-link__value">@CVmorion</span>
-                </a>
-
-                <a class="contact-link" href="https://wa.me/79990804597" target="_blank" rel="noopener">
-                    <span class="contact-link__title">WhatsApp</span>
-                    <span class="contact-link__value">+7 999 080 45 97</span>
-                </a>
-            </div>
-        </div>
-    </div>
+<body id="top">
+<a class="skip" href="#main">К содержанию</a>
+<header class="site-header">
+  <div class="wrap head-row">
+    <a class="brand" href="#top"><svg class="icon icon-brand" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3.5h13v10H8l-5 4v-14Zm16 4h2v13l-4-3h-6"/></svg><span>Василий Осипов</span></a>
+    <nav aria-label="Основная навигация"><a href="#works">Работы</a><a href="#contact">Контакт</a></nav>
+  </div>
+</header>
+<main id="main">
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="wrap hero-inner"><div class="hero-copy">
+    <h1 id="hero-heading">Telegram-боты<br>для бизнеса<br><em>и общения</em></h1>
+    <p>Делаю ботов для специалистов и команд. Посмотрите, как клиент выбирает время, куда попадает его заявка и как персонаж продолжает разговор.</p>
+    <div class="actions"><a class="btn primary" href="#works">Смотреть работы</a><a class="hero-chat" href="https://t.me/CVmorion"><svg class="icon icon-send" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 17-7-4.5 16-4.1-5.5L17 8l-7.8 5.1L3 11Z"/></svg>Написать Василию</a></div>
+  </div>
+  <figure class="portrait" id="about"><div class="portrait-frame" data-tilt><img src="assets/vasilii.webp" alt="Портрет Василия Осипова" width="640" height="640" fetchpriority="high"></div><figcaption><strong>Василий Осипов</strong><span>Разработчик Telegram-ботов</span></figcaption></figure></div>
 </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__inner">
-            <span>© 2026 Василий Осипов</span>
-            <span>Python / AI Automation Developer</span>
-        </div>
-    </footer>
-
-    <script src="data/config.js"></script>
-    <script src="data/cases.js"></script>
-    <script src="js/intro.js"></script>
-    <script src="js/ui.js"></script>
-    <script src="js/main.js"></script>
+<section class="works" id="works" aria-labelledby="works-heading"><div class="wrap">
+  <div class="works-head"><h2 id="works-heading">Работы</h2>
+    <div class="filters" aria-label="Фильтр каталога" role="group" hidden><button type="button" data-filter="all" aria-pressed="true">Все</button><button type="button" data-filter="business" aria-pressed="false">Для бизнеса</button><button type="button" data-filter="dialogs" aria-pressed="false">Диалоги</button><button type="button" data-filter="game" aria-pressed="false">Игра</button></div></div>
+  <div class="feature-pair"><article id="card-booking" class="project-card feature card-booking picture-art" data-category="business">
+  <a class="card-link" href="cases/booking.html" data-project="booking" aria-label="Запись к специалисту. Посмотреть запись">
+    <div class="art-wrap"><div class="card-art" data-tilt><img src="assets/thumb-booking.webp" alt="" loading="lazy" decoding="async"><img class="booking-proof" src="assets/booking-confirmation.webp" alt="Подтверждение записи в архиве ExpertFlowBot" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">Бот для массажиста</span><h3>Запись к специалисту</h3>
+      <p>Клиент находит свободное время для массажа. У специалиста выбранный час появляется в списке записей.</p><span class="card-action">Посмотреть запись</span>
+    </div>
+  </a>
+</article><article id="card-persona" class="project-card feature card-persona picture-art" data-category="dialogs">
+  <a class="card-link" href="cases/persona.html" data-project="persona" aria-label="Диалог с персонажем. Прочитать диалог">
+    <div class="art-wrap"><div class="card-art" data-tilt><img src="assets/thumb-persona.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">AfterDark / Persona</span><h3>Диалог с персонажем</h3>
+      <p>Человек выбирает героиню и сцену. Она отвечает в своём характере и помнит детали их разговора.</p><span class="card-action">Прочитать диалог</span>
+    </div>
+  </a>
+</article></div>
+  <div class="collection" id="catalog"><article id="card-portfolio" class="project-card compact card-portfolio picture-art" data-category="business">
+  <a class="card-link" href="cases/portfolio.html" data-project="portfolio" aria-label="Портфолио в Telegram. Смотреть экраны">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-portfolio.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">SmartCloser</span><h3>Портфолио в Telegram</h3>
+      <p>Посетитель смотрит работы, узнаёт подробности и оставляет контакт прямо в боте.</p><span class="card-action">Смотреть экраны</span>
+    </div>
+  </a>
+</article><article id="card-leads" class="project-card compact card-leads picture-screen" data-category="business">
+  <a class="card-link" href="cases/leads.html" data-project="leads" aria-label="Бот для приёма заявок. Проследить заявку">
+    <div class="art-wrap"><div class="card-art"><img src="assets/intake-check.webp" alt="Сводка заявки перед отправкой" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">Форма с подтверждением</span><h3>Бот для приёма заявок</h3>
+      <p>Имя и контакт можно исправить перед отправкой. Показываю одну заявку вплоть до списка у владельца.</p><span class="card-action">Проследить заявку</span>
+    </div>
+  </a>
+</article><article id="card-fortress" class="project-card compact card-fortress picture-art" data-category="game">
+  <a class="card-link" href="cases/fortress.html" data-project="fortress" aria-label="Fortress. Об игре">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-fortress.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">Игра для ПК</span><h3>Fortress</h3>
+      <p>Моя игра об обороне крепости. Защищайте трое ворот, заряжайте оружие и взрывайте золотых демонов цепочкой.</p><span class="card-action">Об игре</span>
+    </div>
+  </a><a class="play-link" href="https://justlido.itch.io/fortress-demo">Играть на ПК</a>
+</article><article id="card-tarot" class="project-card compact card-tarot picture-art" data-category="dialogs">
+  <a class="card-link" href="cases/tarot.html" data-project="tarot" aria-label="Консультации с Tarot-ботом. Открыть меню">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-tarot.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">Бот для специалиста</span><h3>Консультации с Tarot-ботом</h3>
+      <p>Посетитель знакомится с услугой, получает расклад и может оставить контакт для консультации.</p><span class="card-action">Открыть меню</span>
+    </div>
+  </a>
+</article><article id="card-knowledge" class="project-card compact card-knowledge picture-art" data-category="business">
+  <a class="card-link" href="cases/knowledge.html" data-project="knowledge" aria-label="Помощник по правилам компании. Посмотреть материал">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-knowledge.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">KnowledgePilot</span><h3>Помощник по правилам компании</h3>
+      <p>Сотрудник задаёт вопрос по вашей инструкции. Бот находит нужный пункт и показывает, где его проверить.</p><span class="card-action">Посмотреть материал</span>
+    </div>
+  </a>
+</article><article id="card-qualifier" class="project-card compact card-qualifier picture-art" data-category="business">
+  <a class="card-link" href="cases/qualifier.html" data-project="qualifier" aria-label="Отбор обращений. Разобрать анкету">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-qualifier.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">LeadHarvester</span><h3>Отбор обращений</h3>
+      <p>До первого разговора вы знаете, что нужно человеку, насколько срочно и есть ли бюджет.</p><span class="card-action">Разобрать анкету</span>
+    </div>
+  </a>
+</article><article id="card-crm" class="project-card compact card-crm picture-art" data-category="business">
+  <a class="card-link" href="cases/crm.html" data-project="crm" aria-label="Работа с обращениями. Посмотреть схему">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-crm.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">SimpleCRM</span><h3>Работа с обращениями</h3>
+      <p>Ответственный видит назначенное обращение и отвечает на него. Ответ сохраняется вместе с обращением.</p><span class="card-action">Посмотреть схему</span>
+    </div>
+  </a>
+</article></div>
+  <details class="archive" id="archive-projects"><summary><span>Архивные работы <small>4</small></span><svg class="icon icon-plus" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></summary>
+    <div class="archive-grid"><article id="card-hair" class="project-card compact card-hair picture-art" data-category="business">
+  <a class="card-link" href="cases/hair.html" data-project="hair" aria-label="Запись в салон красоты. Подробнее">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-hair.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">DariaHairPro</span><h3>Запись в салон красоты</h3>
+      <p>Посетитель выбирает процедуру для волос, сообщает контакт и желаемое время визита.</p><span class="card-action">Подробнее</span>
+    </div>
+  </a>
+</article><article id="card-sofa" class="project-card compact card-sofa picture-art" data-category="business">
+  <a class="card-link" href="cases/sofa.html" data-project="sofa" aria-label="Заявка на мебель. Подробнее">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-sofa.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">SofaMaster</span><h3>Заявка на мебель</h3>
+      <p>Заказчик указывает тип дивана, желаемый размер и бюджет. У мастера есть исходные данные для разговора.</p><span class="card-action">Подробнее</span>
+    </div>
+  </a>
+</article><article id="card-clientflow" class="project-card compact card-clientflow picture-art" data-category="business">
+  <a class="card-link" href="cases/clientflow.html" data-project="clientflow" aria-label="Заявка с комментарием. Подробнее">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-clientflow.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">myClientFlow</span><h3>Заявка с комментарием</h3>
+      <p>Человек оставляет имя, телефон и пояснение, с чем обращается.</p><span class="card-action">Подробнее</span>
+    </div>
+  </a>
+</article><article id="card-lifesense" class="project-card compact card-lifesense picture-art" data-category="dialogs">
+  <a class="card-link" href="cases/lifesense.html" data-project="lifesense" aria-label="Текстовый помощник. Подробнее">
+    <div class="art-wrap"><div class="card-art"><img src="assets/thumb-lifesense.webp" alt="" loading="lazy" decoding="async"></div></div>
+    <div class="card-copy"><span class="project-kind">LifeSense</span><h3>Текстовый помощник</h3>
+      <p>Человек пишет сообщение и получает короткий ответ модели.</p><span class="card-action">Подробнее</span>
+    </div>
+  </a>
+</article></div></details>
+  <p class="sr-only" id="filter-result" aria-live="polite"></p>
+</div></section>
+<section class="contact" id="contact" aria-labelledby="contact-heading"><div class="wrap contact-inner">
+  <div><h2 id="contact-heading">Какую задачу<br><em>поручим боту?</em></h2></div>
+  <div class="contact-body"><p>Расскажите, кто будет пользоваться ботом и что сейчас делается вручную. Договоримся о сценарии, цене и сроке. Могу показать похожую работу в Telegram.</p>
+  <a class="btn primary" href="https://t.me/CVmorion"><svg class="icon icon-send" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 17-7-4.5 16-4.1-5.5L17 8l-7.8 5.1L3 11Z"/></svg>Написать Василию</a><small>Личный чат · @CVmorion</small></div>
+</div></section>
+</main>
+<footer class="footer"><div class="wrap foot-row"><span>Василий Осипов</span><a href="https://t.me/SmartCloser15Bot">Портфолио в Telegram</a><a href="#top">Наверх</a></div></footer>
+<script id="catalog-data" type="application/json">[
+  {
+    "id": "booking",
+    "title": "Запись к специалисту",
+    "group": "business",
+    "cover": "massage-art",
+    "short": "Клиент находит свободное время для массажа. У специалиста выбранный час появляется в списке записей.",
+    "kind": "Бот для массажиста",
+    "status": "Галерея · архив ExpertFlowBot",
+    "body": [
+      "В галерее можно пройти весь путь записи. На 15 февраля мест уже нет. Клиент выбирает 16 февраля и получает подтверждение на 11:00. Этот же час виден в списке специалиста.",
+      "В отдельном проекте mySoulRelax проверены выбор дня, свободного времени и сохранение записи. Его можно посмотреть по договорённости."
+    ],
+    "images": [
+      {
+        "src": "assets/booking-start.webp",
+        "title": "Начало записи",
+        "caption": "В архивной версии ExpertFlowBot клиент открывает меню и нажимает «Записаться».",
+        "alt": "Приветствие ExpertFlowBot и кнопка «Записаться»."
+      },
+      {
+        "src": "assets/booking-times.webp",
+        "title": "Выбор свободного времени",
+        "caption": "На 15 февраля мест уже нет. На 16 февраля бот предлагает пять интервалов.",
+        "alt": "Сообщение о занятом дне и кнопки пяти свободных интервалов на 16 февраля."
+      },
+      {
+        "src": "assets/booking-confirmation.webp",
+        "title": "Подтверждение клиенту",
+        "caption": "Бот подтверждает запись на 16 февраля с 11:00 до 13:00.",
+        "alt": "Дата 16 февраля и время 11:00–13:00 указаны под сообщением «Запись подтверждена»."
+      },
+      {
+        "src": "assets/booking-register.webp",
+        "title": "Запись в списке специалиста",
+        "caption": "В списке записей есть 16 февраля, 11:00. Идентификаторы скрыты.",
+        "alt": "Административный список с записью на 16 февраля в 11:00."
+      }
+    ],
+    "cta": "Посмотреть запись",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": true,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-booking.webp"
+  },
+  {
+    "id": "persona",
+    "title": "Диалог с персонажем",
+    "group": "dialogs",
+    "cover": "persona-art",
+    "short": "Человек выбирает героиню и сцену. Она отвечает в своём характере и помнит детали их разговора.",
+    "kind": "AfterDark / Persona",
+    "status": "Переписка · архив Luna Stay",
+    "body": [
+      "В переписке собеседник спрашивает, как героиня научилась держаться собранно. Следующий его вопрос продолжает ту же тему. Оба сообщения и ответы можно прочитать в галерее.",
+      "AfterDark и Persona используют общую основу. Сохранение памяти после перезапуска проверялось отдельно. Для показа можно выбрать персонажа и сцену."
+    ],
+    "images": [
+      {
+        "src": "assets/persona-dialog.webp",
+        "title": "Вопрос героине",
+        "caption": "Собеседник спрашивает, всегда ли героиня была собранной. Она рассказывает о сложных решениях.",
+        "alt": "Вопрос героине"
+      },
+      {
+        "src": "assets/persona-followup.webp",
+        "title": "Продолжение разговора",
+        "caption": "Собеседник уточняет, какие решения давались тяжелее. Героиня продолжает начатую тему.",
+        "alt": "Продолжение разговора"
+      }
+    ],
+    "cta": "Прочитать диалог",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": true,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-persona.webp"
+  },
+  {
+    "id": "portfolio",
+    "title": "Портфолио в Telegram",
+    "group": "business",
+    "cover": "portfolio-art",
+    "short": "Посетитель смотрит работы, узнаёт подробности и оставляет контакт прямо в боте.",
+    "kind": "SmartCloser",
+    "status": "Настоящие экраны портфолио",
+    "body": [
+      "Я собрал свои проекты в одном Telegram-боте. Можно выбрать пример, выяснить, чем он полезен, и перейти к обсуждению.",
+      "В собственной форме портфолио контакт сохраняется сразу после ввода. На снимках видно меню, открытую карточку и ответ после сохранения."
+    ],
+    "images": [
+      {
+        "src": "assets/portfolio-welcome.webp",
+        "title": "Вход в портфолио",
+        "caption": "Посетитель видит, какие задачи решают боты, и кнопку «Примеры работ».",
+        "alt": "Вход в портфолио"
+      },
+      {
+        "src": "assets/portfolio-projects.webp",
+        "title": "Выбор примера",
+        "caption": "Меню на снимке ведёт к сценариям заявки, документов, записи и диалога.",
+        "alt": "Выбор примера"
+      },
+      {
+        "src": "assets/portfolio-case.webp",
+        "title": "Карточка работы",
+        "caption": "За объяснением формы следуют действия «Оставить заявку» и «Обсудить задачу».",
+        "alt": "Карточка работы"
+      },
+      {
+        "src": "assets/portfolio-form.webp",
+        "title": "Ответ после сохранения",
+        "caption": "Бот подтверждает, что контакт сохранён. Можно вернуться к работам.",
+        "alt": "Ответ после сохранения"
+      }
+    ],
+    "cta": "Смотреть экраны",
+    "actions": [
+      {
+        "text": "Открыть бот-портфолио",
+        "href": "https://t.me/SmartCloser15Bot"
+      },
+      {
+        "text": "Написать Василию",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-portfolio.webp"
+  },
+  {
+    "id": "leads",
+    "title": "Бот для приёма заявок",
+    "group": "business",
+    "cover": "intake-check",
+    "short": "Имя и контакт можно исправить перед отправкой. Показываю одну заявку вплоть до списка у владельца.",
+    "kind": "Форма с подтверждением",
+    "status": "Четыре фрагмента одного обращения",
+    "body": [
+      "Сначала человек проверяет оба поля. После отправки видит номер заявки. У ответственного есть карточка и сохранённый список — к контакту можно вернуться позже.",
+      "В примере карточка и список открыты с правами владельца в одном чате. Совпадают номер 1 и время 20:28. Личные данные на кадрах скрыты."
+    ],
+    "images": [
+      {
+        "src": "assets/intake-check.webp",
+        "title": "Перед отправкой",
+        "caption": "Клиент может исправить имя или контакт, отправить заявку либо отменить её.",
+        "alt": "Сводка с полями имени и контакта, кнопками отправки, исправления и отмены."
+      },
+      {
+        "src": "assets/intake-saved.webp",
+        "title": "Заявка №1 сохранена",
+        "caption": "Бот сообщает клиенту номер заявки и статус отправки уведомления.",
+        "alt": "Ответ бота: заявка №1 сохранена, уведомление отправлено ответственному."
+      },
+      {
+        "src": "assets/intake-notice.webp",
+        "title": "Новая заявка у ответственного",
+        "caption": "В карточке №1 есть имя, контакт и время обращения. Личные данные на снимке скрыты.",
+        "alt": "Сообщение «Новая заявка №1» с полями имени, контакта и времени."
+      },
+      {
+        "src": "assets/intake-list.webp",
+        "title": "Та же заявка в списке",
+        "caption": "В списке обращений видна заявка №1 с тем же временем. К ней можно вернуться после разговора.",
+        "alt": "Список с одной сохранённой заявкой №1 и статусом уведомления."
+      }
+    ],
+    "cta": "Проследить заявку",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "screen",
+    "thumb": "assets/intake-check.webp"
+  },
+  {
+    "id": "fortress",
+    "title": "Fortress",
+    "group": "game",
+    "cover": "fortress-gameplay",
+    "short": "Моя игра об обороне крепости. Защищайте трое ворот, заряжайте оружие и взрывайте золотых демонов цепочкой.",
+    "kind": "Игра для ПК",
+    "status": "Браузерная демоверсия · 10 минут активной игры",
+    "body": [
+      "Я разрабатываю Fortress под именем JustLido. Вы управляете героем, пока бойцы и турели прикрывают подступы. Усиленные выстрелы разным оружием позволяют устроить цепной взрыв.",
+      "Демо запускается в браузере компьютера. Для игры нужны клавиатура и мышь."
+    ],
+    "images": [
+      {
+        "src": "assets/fortress-gameplay.webp",
+        "title": "Оборона крепости",
+        "caption": "Игровой кадр с официальной страницы браузерной демоверсии.",
+        "alt": "Роботы и герой отбивают атаку на крепость среди демонов и вспышек выстрелов."
+      }
+    ],
+    "cta": "Об игре",
+    "actions": [
+      {
+        "text": "Играть на itch.io",
+        "href": "https://justlido.itch.io/fortress-demo"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-fortress.webp"
+  },
+  {
+    "id": "tarot",
+    "title": "Консультации с Tarot-ботом",
+    "group": "dialogs",
+    "cover": "tarot-art",
+    "short": "Посетитель знакомится с услугой, получает расклад и может оставить контакт для консультации.",
+    "kind": "Бот для специалиста",
+    "status": "Архивное меню SoulTarotBot",
+    "body": [
+      "В меню есть расклад, услуги и запись. В проверенном сценарии бот сохраняет три карты и учитывает их при следующем вопросе. Для консультации посетитель может оставить контакт.",
+      "В галерее показано историческое меню. Расклад в этом проекте — развлекательная практика для размышления."
+    ],
+    "images": [
+      {
+        "src": "assets/tarot-menu.webp",
+        "title": "С чего начинает посетитель",
+        "caption": "В архивном меню видны «Получить расклад», «Записаться на расклад» и услуги.",
+        "alt": "С чего начинает посетитель"
+      },
+      {
+        "src": "assets/tarot-art.webp",
+        "title": "Обложка Tarot-бота",
+        "caption": "Иллюстрация из проекта mySoulTarotBot.",
+        "alt": "Обложка Tarot-бота"
+      }
+    ],
+    "cta": "Открыть меню",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-tarot.webp"
+  },
+  {
+    "id": "knowledge",
+    "title": "Помощник по правилам компании",
+    "group": "business",
+    "cover": "instruction-excerpt",
+    "short": "Сотрудник задаёт вопрос по вашей инструкции. Бот находит нужный пункт и показывает, где его проверить.",
+    "kind": "KnowledgePilot",
+    "status": "Материал показа · русский учебный регламент",
+    "body": [
+      "Например, клиент хочет перенести визит. Сотруднику нужно узнать, кому написать и когда новая дата считается согласованной. В приложенном регламенте можно прочитать оба правила.",
+      "Для вашей команды я помогу подготовить документы, согласовать доступ и проверить ответы на ваших рабочих вопросах. В проекте проверяли загрузку текстовых документов, поиск и отдельный ответ с моделью Яндекса. Здесь показан исходный регламент."
+    ],
+    "images": [
+      {
+        "src": "assets/instruction-excerpt.webp",
+        "title": "Когда согласована новая дата",
+        "caption": "Точная выдержка из учебной инструкции о переносе визита. Полный текст можно скачать.",
+        "alt": "Когда согласована новая дата"
+      }
+    ],
+    "cta": "Посмотреть материал",
+    "actions": [
+      {
+        "text": "Скачать инструкцию",
+        "href": "assets/visit-instructions.txt",
+        "download": "visit-instructions.txt"
+      },
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-knowledge.webp"
+  },
+  {
+    "id": "qualifier",
+    "title": "Отбор обращений",
+    "group": "business",
+    "cover": "lead-questions",
+    "short": "До первого разговора вы знаете, что нужно человеку, насколько срочно и есть ли бюджет.",
+    "kind": "LeadHarvester",
+    "status": "Схема проверенной анкеты",
+    "body": [
+      "Бот спрашивает о типе запроса, срочности и бюджете. По заданному правилу рассчитывает приоритет и сохраняет обращение.",
+      "Для вашего проекта согласуем вопросы и правила отбора заявок."
+    ],
+    "images": [
+      {
+        "src": "assets/lead-questions.webp",
+        "title": "Три вопроса для отбора",
+        "caption": "Схема воспроизводит смысл вопросов LeadHarvester. В Telegram варианты ответов показаны кнопками.",
+        "alt": "Три вопроса для отбора"
+      }
+    ],
+    "cta": "Разобрать анкету",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-qualifier.webp"
+  },
+  {
+    "id": "crm",
+    "title": "Работа с обращениями",
+    "group": "business",
+    "cover": "crm-path",
+    "short": "Ответственный видит назначенное обращение и отвечает на него. Ответ сохраняется вместе с обращением.",
+    "kind": "SimpleCRM",
+    "status": "Схема обработки обращения",
+    "body": [
+      "В очереди можно назначить ответственного, получить сводку и ответить на конкретное обращение. После ответа меняется статус.",
+      "При проверке назначения и ответа роли выполнял один человек. Подключение источника обращений для вашей команды входит в обсуждение задачи."
+    ],
+    "images": [
+      {
+        "src": "assets/crm-path.webp",
+        "title": "От обращения до ответа",
+        "caption": "На схеме — назначение и сохранение ответа. Эти этапы проверены в SimpleCRM.",
+        "alt": "От обращения до ответа"
+      }
+    ],
+    "cta": "Посмотреть схему",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": false,
+    "shape": "art",
+    "thumb": "assets/thumb-crm.webp"
+  },
+  {
+    "id": "hair",
+    "title": "Запись в салон красоты",
+    "group": "business",
+    "cover": "hair-art",
+    "short": "Посетитель выбирает процедуру для волос, сообщает контакт и желаемое время визита.",
+    "kind": "DariaHairPro",
+    "status": "Архив · обложка и сценарий по коду",
+    "body": [
+      "Бот салона помогает выбрать процедуру и собирает сведения для записи. Желаемое время передаётся вместе с контактом."
+    ],
+    "images": [
+      {
+        "src": "assets/hair-art.webp",
+        "title": "Обложка бота салона",
+        "caption": "Исходная иллюстрация DariaHairPro. Она знакомит с тематикой процедур для волос.",
+        "alt": "Обложка бота салона"
+      }
+    ],
+    "cta": "Подробнее",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": true,
+    "shape": "art",
+    "thumb": "assets/thumb-hair.webp"
+  },
+  {
+    "id": "sofa",
+    "title": "Заявка на мебель",
+    "group": "business",
+    "cover": "sofa-art",
+    "short": "Заказчик указывает тип дивана, желаемый размер и бюджет. У мастера есть исходные данные для разговора.",
+    "kind": "SofaMaster",
+    "status": "Архив · обложка и сценарий по коду",
+    "body": [
+      "Бот мебельной студии собирает пожелания по изготовлению дивана. Клиент выбирает прямую, угловую или модульную модель и оставляет контакт."
+    ],
+    "images": [
+      {
+        "src": "assets/sofa-art.webp",
+        "title": "Обложка мебельного проекта",
+        "caption": "Иллюстрация из проекта SofaMaster. Сценарий относится к изготовлению диванов.",
+        "alt": "Обложка мебельного проекта"
+      }
+    ],
+    "cta": "Подробнее",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": true,
+    "shape": "art",
+    "thumb": "assets/thumb-sofa.webp"
+  },
+  {
+    "id": "clientflow",
+    "title": "Заявка с комментарием",
+    "group": "business",
+    "cover": "clientflow-fields",
+    "short": "Человек оставляет имя, телефон и пояснение, с чем обращается.",
+    "kind": "myClientFlow",
+    "status": "Архив · схема полей по коду",
+    "body": [
+      "Эта форма подходит для обратного звонка, когда важно заранее узнать тему обращения. Поля относятся к отдельному проекту myClientFlow."
+    ],
+    "images": [
+      {
+        "src": "assets/clientflow-fields.webp",
+        "title": "Поля короткой формы",
+        "caption": "Схема трёх полей архивного проекта: имя, телефон и комментарий.",
+        "alt": "Поля короткой формы"
+      }
+    ],
+    "cta": "Подробнее",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": true,
+    "shape": "art",
+    "thumb": "assets/thumb-clientflow.webp"
+  },
+  {
+    "id": "lifesense",
+    "title": "Текстовый помощник",
+    "group": "dialogs",
+    "cover": "lifesense-flow",
+    "short": "Человек пишет сообщение и получает короткий ответ модели.",
+    "kind": "LifeSense",
+    "status": "Архив · схема диалога по коду",
+    "body": [
+      "В этой версии LifeSense пользователь вводит текст, а бот возвращает короткий ответ языковой модели. Пример показывает простое общение в Telegram."
+    ],
+    "images": [
+      {
+        "src": "assets/lifesense-flow.webp",
+        "title": "Устройство диалога",
+        "caption": "Схема обмена сообщением и ответом в архивной версии LifeSense.",
+        "alt": "Устройство диалога"
+      }
+    ],
+    "cta": "Подробнее",
+    "actions": [
+      {
+        "text": "Договориться о показе",
+        "href": "https://t.me/CVmorion"
+      }
+    ],
+    "featured": false,
+    "archive": true,
+    "shape": "art",
+    "thumb": "assets/thumb-lifesense.webp"
+  }
+]</script>
 </body>
 </html>
